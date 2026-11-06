@@ -39,15 +39,19 @@
 
     <div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:var(--border-subtle)"></span><span style="font-size:18px">Become a Member</span><span style="flex:1;height:1px;background:var(--border-subtle)"></span></div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-top:10px">
+    <div style="display:flex;flex-direction:column;gap:10px;padding-top:10px">
       <sc-for list="{{ bundles }}" as="o" hint-placeholder-count="3">
-        <button onClick="{{ o.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:22px 8px 14px;border-radius:10px;cursor:pointer;font-family:var(--font-sans);text-align:center;border:{{ o.border }};background:{{ o.bg }}">
-          <sc-if value="{{ o.tag }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--surface-brand);color:#fff;font:700 15px/20px var(--font-sans);padding:3px 12px;border-radius:6px">{{ o.tag }}</span></sc-if>
-          <img loading="lazy" src="{{ o.img }}" alt="" style="height:64px;object-fit:contain">
-          <span style="font-size:16px;line-height:20px;font-weight:500">{{ o.label }}<sc-if value="{{ o.free }}" hint-placeholder-val="{{ false }}"> + <span style="color:var(--text-brand);font-weight:600">FREE Shipping</span></sc-if></span>
-          <s style="font-size:14px;color:var(--text-muted)">$59.90</s>
-          <b style="font-size:clamp(17px,2cqw,20px)">{{ o.each }}/ea</b>
-          <span style="background:var(--zf-green-100);color:var(--text-brand);font:700 14px/18px var(--font-sans);letter-spacing:.04em;padding:3px 10px;border-radius:6px">{{ o.save }}</span>
+        <button onClick="{{ o.pick }}" style="position:relative;display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:14px;cursor:pointer;font-family:var(--font-sans);text-align:left;border:{{ o.border }};background:{{ o.bg }}">
+          <span style="width:20px;height:20px;border-radius:50%;border:2px solid {{ o.radioBorder }};background:{{ o.radioBg }};flex-shrink:0;box-sizing:border-box"></span>
+          <img loading="lazy" src="{{ o.img }}" alt="" style="height:52px;width:44px;object-fit:contain;flex-shrink:0">
+          <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
+            <span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:17px;font-weight:700">{{ o.label }}<sc-if value="{{ o.tag }}" hint-placeholder-val="{{ false }}"><span style="background:var(--surface-brand);color:#fff;font:700 12px/16px var(--font-sans);padding:3px 8px;border-radius:6px">{{ o.tag }}</span></sc-if></span>
+            <span style="font-size:14px;color:var(--text-muted)">{{ o.sub }}</span>
+          </span>
+          <span style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0">
+            <b style="font-size:18px">{{ o.each }}/ea</b>
+            <span style="font-size:13px;color:var(--text-muted)">{{ o.total }} total</span>
+          </span>
         </button>
       </sc-for>
     </div>
@@ -139,7 +143,7 @@ class Component extends DCLogic {
       { q: 1, label: 'Buy 1', tag: null, free: false, each: '$39.92', save: 'SAVE 33%', day: '$1.33/day', img: 'assets/bundle-1.png', total: '$39.92', saving: '$19.98' }
     ];
     const sel = B.find(b => b.q === bundle);
-    const bundles = B.map(b => ({ ...b, pick: () => this.setState({ bundle: b.q, oneTime: false, added: false }), border: (!oneTime && b.q === bundle) ? '2px solid var(--border-brand)' : '1px solid var(--border-subtle)', bg: (!oneTime && b.q === bundle) ? 'var(--surface-tint)' : '#fff' }));
+    const bundles = B.map(b => { const sel = !oneTime && b.q === bundle; return { ...b, sub: b.q === 1 ? '1 month supply' : b.q + ' months supply' + (b.free ? ' · Free shipping' : ''), pick: () => this.setState({ bundle: b.q, oneTime: false, added: false }), border: sel ? '2px solid var(--border-brand)' : '1px solid var(--border-subtle)', bg: sel ? 'var(--surface-tint)' : '#fff', radioBg: sel ? 'var(--zf-green-700)' : '#fff', radioBorder: sel ? 'var(--zf-green-700)' : 'var(--zf-ink-300)' }; });
     const ck = (items) => h('div', { style: { display: 'flex', flexDirection: 'column', gap: 4 } }, items.map((t, k) => h('div', { key: k, style: { display: 'flex', gap: 8 } }, h('span', { style: { color: 'var(--text-brand)', fontWeight: 800 } }, '✓'), h('span', null, t))));
     const b = t => h('b', null, t);
     const para = (...kids) => h('p', { style: { margin: '0 0 10px' } }, ...kids);
