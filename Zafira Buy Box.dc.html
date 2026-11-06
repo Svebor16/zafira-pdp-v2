@@ -9,7 +9,6 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/styles.css">
-<style>#iframe-frontrow-quant{height:0px}#frontrow-badge{position:relative;display:flex;width:100%;background:#fff;border:1.5px solid #2c5233;border-radius:10px;padding:10px 14px;box-shadow:0 1px 5px rgba(0,0,0,.05);box-sizing:border-box}.iframe-frontrow{width:100%;margin:0}.iframe-modal-frontrow{display:none;position:fixed;z-index:99999999;left:0;top:0;right:0;bottom:0;width:100%;height:100%;overflow:hidden}</style>
 <script src="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/_ds_bundle.js"></script>
 </helmet>
 <div id="buy" style="max-width:1240px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:12px 48px;align-items:start;font-family:var(--font-sans);color:#000">
@@ -25,10 +24,36 @@
         <button onClick="{{ t.pick }}" aria-label="Show image" style="width:{{ t.w }};height:4px;padding:0;border:none;border-radius:999px;cursor:pointer;background:{{ t.c }}"></button>
       </sc-for>
     </div>
-    <div id="frontrow-badge">
-<iframe class="iframe-frontrow" id="iframe-frontrow-quant" title="FrontrowMD Clinicians' Choice Badge" frameborder="0" src="https://app.thefrontrowhealth.com/api/widgets?presentation_type=quant&product_id=6531"></iframe>
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="position:absolute;width:1px;height:1px;opacity:0" onload="if(!window.__frQuantBoot){window.__frQuantBoot=1;var s=document.createElement('script');s.async=true;s.src='https://app.thefrontrowhealth.com/api/widgets/script?presentation_type=quant&product_id=6531';document.head.appendChild(s);}">
-</div>
+    <div style="border-radius:16px;background:#F3F5F1;padding:12px;display:flex;flex-direction:column;gap:10px;font-family:var(--font-sans)">
+      <div style="display:inline-flex;align-self:flex-start;background:#E8ECE6;border-radius:999px;padding:4px;gap:4px">
+        <button onClick="{{ setAskTabA }}" style="border:none;cursor:pointer;border-radius:999px;padding:8px 14px;font:600 15px/18px var(--font-sans);{{ askTabStyle }}">&#10022; Ask Zafira</button>
+        <button onClick="{{ setAskTabI }}" style="border:none;cursor:pointer;border-radius:999px;padding:8px 14px;font:600 15px/18px var(--font-sans);{{ ingTabStyle }}">Ingredient Analysis</button>
+      </div>
+      <sc-if value="{{ askOn }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #DADFD6;border-radius:999px;padding:6px 6px 6px 16px">
+            <input value="{{ askQ }}" onChange="{{ setAskQ }}" onKeyDown="{{ askKey }}" placeholder="How does the science work?" style="flex:1;min-width:0;border:none;outline:none;font:400 15px/20px var(--font-sans);background:transparent">
+            <button onClick="{{ askNow }}" style="border:none;cursor:pointer;background:linear-gradient(135deg,#2F5BD3,#3D6FE3);color:#fff;border-radius:999px;padding:9px 18px;font:700 14px/18px var(--font-sans)">Ask</button>
+          </div>
+          <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:2px">
+            <sc-for list="{{ askChips }}" as="c" hint-placeholder-count="3">
+              <button onClick="{{ c.pick }}" style="flex-shrink:0;border:none;cursor:pointer;background:#E8ECE6;border-radius:999px;padding:8px 14px;font:500 13px/16px var(--font-sans);color:#222;white-space:nowrap">{{ c.q }}</button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ askA }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#fff;border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.45;color:#222">{{ askA }}</div>
+          </sc-if>
+        </div>
+      </sc-if>
+      <sc-if value="{{ ingOn }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#fff;border-radius:12px;padding:6px 14px;display:flex;flex-direction:column">
+          <sc-for list="{{ ingList }}" as="ig" hint-placeholder-count="10">
+            <div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #ECEFE9;font-size:15px"><span>{{ ig.n }}</span><b>{{ ig.d }}</b></div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <span style="font-size:12px;color:#666">General information, not medical advice. Ask your prescriber before starting.</span>
+    </div>
   </div>
 
   <div style="grid-row:span 2;display:flex;flex-direction:column;gap:14px;min-width:0">
@@ -122,8 +147,17 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1400},&quot;compliant&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showDetails&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;onAdd&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;}}">
+const KB = [
+  { k: ['research', 'ingredient', 'study', 'studies', 'evidence', 'clinical'], chip: 'Does research support these ingredients?', a: 'Each ingredient is listed with its exact dose on the label, so you can see what is in every capsule. For the research behind each one, ask your prescriber or check the supplement facts table on this page.' },
+  { k: ['science', 'how does', 'how it works', 'work'], chip: 'How does the science work?', a: 'When your body thinks it is in danger, it runs on stress hormones like cortisol. Recovery Foundation contains L-theanine and magnesium, which are included to support a calmer stress response.' },
+  { k: ['glp', 'medication', 'prescri', 'antidep', 'thyroid', 'diabetes'], chip: 'Can I take it with my GLP-1?', a: 'It is designed to be taken alongside GLP-1 therapy. Check with your prescriber first, especially if you take antidepressants, blood-pressure, thyroid or diabetes medication.' },
+  { k: ['take', 'dose', 'how many', 'daily'], chip: 'How do I take it?', a: 'Take 2 capsules every day, after a meal. One bottle is a 30-day supply.' },
+  { k: ['safe', 'vegan', 'third', 'made in', 'gluten', 'gmo'], chip: 'Is it safe and tested?', a: 'Made in USA, third-party tested, vegan, non-GMO and gluten-free. Results vary, and it is not a replacement for medical advice.' },
+  { k: ['when', 'notice', 'how long', 'how soon', 'results'], chip: 'When will I notice a difference?', a: 'Reviewers report digestion changes within days, energy within weeks, mood by weeks 3 to 4 and hair by months 2 to 3. Results vary.' }
+];
+const answerFor = (text) => { const t = (text || '').toLowerCase(); const hit = KB.find(x => x.k.some(w => t.includes(w))); return hit ? hit.a : "I don't have an answer for that yet. Try one of the suggested questions, or ask your prescriber."; };
 class Component extends DCLogic {
-  state = { img: 0, bundle: 3, oneTime: false, added: false };
+  state = { img: 0, bundle: 3, oneTime: false, added: false, askTab: 'ask', askQ: '', askA: '' };
   renderVals() {
     const h = React.createElement;
     const compliant = !!this.props.compliant;
@@ -171,6 +205,17 @@ class Component extends DCLogic {
       thumbs: gal.map((g, i) => ({ src: g.th, pick: () => go(i), w: i === img ? '22px' : '8px', c: i === img ? 'var(--surface-brand)' : 'var(--zf-ink-300)' })),
       benefits, bundles,
       member: !oneTime, oneTime,
+      askQ: this.state.askQ, askA: this.state.askA,
+      askOn: this.state.askTab === 'ask', ingOn: this.state.askTab === 'ing',
+      askTabStyle: this.state.askTab === 'ask' ? 'background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.12);color:#000' : 'background:transparent;color:#444',
+      ingTabStyle: this.state.askTab === 'ing' ? 'background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.12);color:#000' : 'background:transparent;color:#444',
+      setAskTabA: () => this.setState({ askTab: 'ask' }),
+      setAskTabI: () => this.setState({ askTab: 'ing' }),
+      setAskQ: (e) => this.setState({ askQ: e.target.value }),
+      askNow: () => this.setState(st => ({ askA: answerFor(st.askQ), askTab: 'ask' })),
+      askKey: (e) => { if (e.key === 'Enter') this.setState(st => ({ askA: answerFor(st.askQ), askTab: 'ask' })); },
+      askChips: KB.filter(k => k.chip).map(k => ({ q: k.chip, pick: () => this.setState({ askQ: k.chip, askA: k.a, askTab: 'ask' }) })),
+      ingList: [{ n: 'L-Theanine', d: '200 mg' }, { n: 'Magnesium', d: '50 mg' }, { n: 'Myo-Inositol', d: '600 mg' }, { n: 'Saffron Extract', d: '30 mg' }, { n: 'Ginger Extract', d: '100 mg' }, { n: 'Zinc', d: '10 mg' }, { n: 'Copper', d: '0.5 mg' }, { n: 'Vitamin D3', d: '2,000 IU' }, { n: 'Vitamin B12', d: '50 mcg' }, { n: 'Vitamin C', d: '50 mg' }],
       saving: sel.saving,
       shipLine: sel.free ? 'FREE shipping on this order' : 'Free shipping on 2+ bottles',
       ctaLabel: oneTime ? 'Add to cart · $59.90' : 'Add to cart', ctaProps: { style: { borderRadius: 999, padding: '20px 32px' } }, showFacebook: !this.props.hideWeight,
