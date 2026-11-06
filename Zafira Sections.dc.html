@@ -194,10 +194,10 @@
 </footer>
 </sc-if>
 
-<sc-if value="{{ is.sticky }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ stickyOn }}" hint-placeholder-val="{{ false }}">
 <div style="background:#fff;border-top:1px solid var(--border-subtle);box-shadow:0 -2px 10px rgba(0,0,0,.08);padding:10px 16px;display:flex;align-items:center;gap:12px">
   <img loading="lazy" src="assets/bundle-1.png" alt="" style="height:44px">
-  <span style="flex:1;min-width:0;display:flex;flex-direction:column;font-size:16px;line-height:21px"><b>Recovery Foundation</b><span style="color:var(--text-muted)">From $0.88/day · <span style="color:var(--zf-judgeme)">★</span> 4.9 (12,847+)</span></span>
+  <span style="flex:1;min-width:0;display:flex;flex-direction:column;font-size:16px;line-height:21px"><b>Recovery Foundation</b><span style="color:var(--text-muted)">From $0.88/day</span></span>
   <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Button" size="sm" on-click="{{ toBuy }}" hint-size="160px,44px">Select bundle</x-import>
 </div>
 </sc-if>
@@ -206,6 +206,16 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;section&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;announce&quot;,&quot;ribbon&quot;,&quot;problem&quot;,&quot;refill&quot;,&quot;timeline&quot;,&quot;compare&quot;,&quot;mosaic&quot;,&quot;quality&quot;,&quot;faq&quot;,&quot;guarantee&quot;,&quot;footer&quot;,&quot;sticky&quot;],&quot;default&quot;:&quot;refill&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
+  componentDidMount() {
+    this._onScroll = () => {
+      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const show = window.scrollY / max >= 0.4;
+      if (show !== !!(this.state && this.state.show)) this.setState({ show });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
   renderVals() {
     const sec = this.props.section ?? 'refill';
     const keys = ['announce', 'ribbon', 'problem', 'refill', 'timeline', 'compare', 'mosaic', 'quality', 'faq', 'guarantee', 'footer', 'sticky'];
@@ -213,6 +223,7 @@ class Component extends DCLogic {
     const L = f => 'assets/life/' + f;
     return {
       is,
+      stickyOn: is.sticky && !!(this.state && this.state.show),
       toBuy: () => { const el = document.getElementById('buy'); if (!el) return; const sc = el.closest('[data-artboard]'); if (sc) { sc.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' }); } else { window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' }); } },
       refills: [
         { img: L('jogging.png'), n: 'REFILL 01:', t: 'Energy', short: 'B12 (50mcg), D3 (2,000 IU), Magnesium (50mg), Vitamin C (50mg)', items: ['Vitamin B12 (50mcg Methylcobalamin)', 'Vitamin D3 (2,000 IU)', 'Magnesium (50mg)', 'Vitamin C (50mg)'] },
