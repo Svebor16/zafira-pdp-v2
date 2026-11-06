@@ -26,7 +26,7 @@
   </div>
   <div style="columns:280px 4;column-gap:16px">
     <sc-for list="{{ tpShown }}" as="r" hint-placeholder-count="4">
-      <div style="break-inside:avoid;margin-bottom:16px;background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px">
+      <div style="break-inside:avoid;margin-bottom:12px;background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px">
         <div style="display:flex;gap:12px;align-items:center">
           <sc-if value="{{ r.photo }}" hint-placeholder-val="{{ false }}"><img loading="lazy" src="{{ r.photo }}" alt="" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0"></sc-if>
           <sc-if value="{{ r.noPhoto }}" hint-placeholder-val="{{ true }}"><span style="width:44px;height:44px;border-radius:50%;background:{{ r.bg }};color:{{ r.fg }};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0">{{ r.initials }}</span></sc-if>
@@ -37,8 +37,7 @@
         <p style="margin:0;font-size:18px;line-height:27px">{{ r.text }}</p>
         <div style="display:flex;flex-wrap:wrap;gap:6px">
           <span style="background:var(--zf-ink-100);border-radius:6px;padding:3px 8px;font-size:14px">{{ r.exp }}</span>
-          <span style="background:var(--zf-ink-100);border-radius:6px;padding:3px 8px;font-size:14px">Trustpilot review</span>
-        </div>
+                  </div>
       </div>
     </sc-for>
   </div>

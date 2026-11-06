@@ -27,7 +27,7 @@
 
 <section style="padding:8px 0 8px">
   <div style="max-width:1100px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:12px">
-    <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:700 14px/18px var(--font-sans);letter-spacing:.08em;color:var(--text-brand)">REAL CUSTOMERS ON VIDEO</span><span style="color:#F5B301;letter-spacing:1px">★★★★★</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:700 14px/18px var(--font-sans);letter-spacing:.08em;color:var(--text-brand)">REAL CUSTOMER STORIES</span></div>
     <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2cqw,20px);max-width:820px;width:100%;align-self:center">
       <div style="display:flex;flex-direction:column;gap:6px"><img loading="lazy" src="assets/video-1.png" alt="Video review" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;display:block"><b style="font-size:clamp(15px,1.6cqw,18px);line-height:1.35">“I'm back to me.”</b></div>
       <div style="display:flex;flex-direction:column;gap:6px"><img loading="lazy" src="assets/video-2.png" alt="Video review" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;display:block"><b style="font-size:clamp(15px,1.6cqw,18px);line-height:1.35">“Wow mom, total change.”</b></div>
@@ -46,9 +46,9 @@
     <div style="background:var(--zf-forest-950);color:#fff;border-radius:14px;padding:12px 14px;font-size:17px;line-height:25px"><b>44.6% blamed themselves</b> before anyone named the cause. It's stress your body can't switch off, not you.</div>
     </div>
     <div style="position:relative;border-radius:16px;overflow:hidden;width:100%;max-width:460px;justify-self:center">
-      <img loading="lazy" src="assets/tired-woman.jpg" alt="Exhausted woman on a sofa" style="width:100%;aspect-ratio:4/4.4;object-fit:cover;display:block">
+      <img loading="lazy" src="assets/tired-woman.jpg" alt="Exhausted woman on a sofa" style="width:100%;aspect-ratio:4/4.4;object-fit:cover;display:block;transform:scale(1.2);transform-origin:50% 100%">
       <div style="position:absolute;top:14px;left:12px;max-width:62%;background:#fff;border-radius:14px;padding:8px 11px;font-size:16px;line-height:18px;box-shadow:0 2px 10px rgba(0,0,0,.12)">“After that I'm done for the day.”</div>
-      <div style="position:absolute;top:42%;right:12px;max-width:62%;background:#fff;border-radius:14px;padding:8px 11px;font-size:16px;line-height:18px;box-shadow:0 2px 10px rgba(0,0,0,.12)">“I stopped caring about anything.”</div>
+      <div style="position:absolute;top:60%;right:12px;max-width:62%;background:#fff;border-radius:14px;padding:8px 11px;font-size:16px;line-height:18px;box-shadow:0 2px 10px rgba(0,0,0,.12)">“I stopped caring about anything.”</div>
       <div style="position:absolute;bottom:14px;left:12px;max-width:62%;background:#fff;border-radius:14px;padding:8px 11px;font-size:16px;line-height:18px;box-shadow:0 2px 10px rgba(0,0,0,.12)">“I was about to stop taking Zepbound.”</div>
     </div>
   </div>
@@ -69,7 +69,7 @@
     <span style="text-align:center;color:var(--zf-ink-500);line-height:1">↓</span>
     <div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" src="assets/energy-mood-hair.jpg" alt="Energy, mood and hair: a tired woman, a flat grandmother with grandkids, a woman finding hair on her brush" style="width:100%;display:block;border-radius:10px"><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;text-align:center"><b style="font-size:clamp(15px,1.8cqw,18px);line-height:1.2;color:var(--zf-green-900)">Wiped out by 2pm</b><b style="font-size:clamp(15px,1.8cqw,18px);line-height:1.2;color:var(--zf-green-900)">Flat and numb</b><b style="font-size:clamp(15px,1.8cqw,18px);line-height:1.2;color:var(--zf-green-900)">Hair sheds</b></div></div>
     <span style="text-align:center;color:var(--zf-ink-500);line-height:1">↓</span>
-    <div style="background:var(--surface-brand);color:#fff;border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center"><img loading="lazy" src="assets/bottle-front-cutout.png" alt="" style="height:64px;flex-shrink:0"><span><b style="font-size:17px;line-height:22px;display:block">Zafira helps keep cortisol in check*</b><span style="font-size:17px;line-height:25px">L-theanine, magnesium and saffron, so your body can stop running on stress</span></span></div>
+    <div style="background:var(--surface-brand);color:#fff;border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center"><img loading="lazy" src="assets/bottle-front-cutout.png" alt="" style="height:64px;flex-shrink:0"><span><b style="font-size:17px;line-height:22px;display:block">Zafira helps keep cortisol in check</b><span style="font-size:17px;line-height:25px">L-theanine, magnesium and saffron, so your body can stop running on stress</span></span></div>
     </div>
   </div>
 </section>
@@ -90,7 +90,7 @@
             <span style="font:800 13px/16px var(--font-sans);letter-spacing:.06em;color:var(--text-brand)">{{ ph.when }}</span>
             <b style="font-size:22px;line-height:28px">{{ ph.t }}</b>
             <img loading="lazy" src="{{ ph.img }}" alt="" style="width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:16px;display:block">
-            <span style="font-size:17px;line-height:26px">{{ ph.d }}</span>
+            <span style="font-size:17px;line-height:26px">{{ ph.d }}</span><div style="display:flex;flex-wrap:wrap;gap:6px"><sc-for list="{{ ph.nuts }}" as="nu" hint-placeholder-count="2"><span style="display:inline-flex;align-items:center;gap:6px;background:var(--zf-green-100);color:var(--text-brand);font:700 13px/16px var(--font-sans);padding:6px 10px;border-radius:999px"><span style="width:8px;height:8px;border-radius:50%;background:var(--zf-green-700)"></span>{{ nu.x }}</span></sc-for></div>
             <div style="background:#fff;border-left:3px solid var(--border-brand);border-radius:0 10px 10px 0;padding:10px 12px;font-size:17px;line-height:25px">“{{ ph.q }}” <span style="color:var(--zf-ink-700);font-size:15px">{{ ph.who }}</span></div>
           </div>
         </div>
@@ -100,12 +100,6 @@
   </div>
 </section>
 
-<section style="background:#D3F1D3;padding:0 0 clamp(32px,5cqw,56px)">
-  <div style="max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:12px">
-    <img loading="lazy" src="assets/ingredients-section.png" alt="What's inside: 10 nutrients, 2 capsules. L-Theanine 200mg, Magnesium 50mg, Myo-Inositol 600mg, Zinc + Copper 10 + 0.5mg, Vitamin D3 2,000 IU, Ginger 100mg, Vitamin C 50mg, Vitamin B12 50mcg, Saffron 30mg. Made in USA, 3rd party tested, vegan, non-GMO, gluten-free." style="width:100%;display:block">
-    <div style="padding:0 20px"><div style="width:100%;max-width:460px;align-self:center;margin:0 auto"><x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Button" size="lg" full-width="{{ true }}" dc-props="{{ pill }}" on-click="{{ toBuy }}" hint-size="100%,64px">Shop Recovery Foundation</x-import></div></div>
-  </div>
-</section>
 
 <section style="padding:clamp(28px,4cqw,56px) 0">
   <div style="max-width:1200px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:16px">
@@ -134,7 +128,6 @@
     <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="3">
       <div style="flex:0 0 min(86%,360px);scroll-snap-align:start;border:1px solid var(--border-subtle);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px">
         <div style="display:flex;gap:10px;align-items:center"><span style="width:40px;height:40px;border-radius:50%;background:var(--surface-brand);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center">{{ q.i }}</span><span style="display:flex;flex-direction:column"><b style="font-size:15px">{{ q.n }} <span style="background:var(--zf-green-100);color:var(--text-brand);font-size:11px;padding:2px 7px;border-radius:999px;margin-left:4px">{{ q.src }}</span></b><span style="font-size:15px;color:var(--zf-ink-700)">{{ q.meta }}</span></span></div>
-        <span style="color:#F5B301;letter-spacing:1px">★★★★★</span>
         <span style="font-size:18px;line-height:27px">“<mark style="background:#FFF176">{{ q.hl }}</mark>{{ q.rest }}”</span>
       </div>
     </sc-for>
@@ -224,10 +217,10 @@ class Component extends DCLogic {
         { t: 'Ready to quit your GLP-1.', q: '"I was about to stop taking Zepbound."' }
       ],
       phases: [
-        { n: '1', when: 'DAYS 1-7', t: 'Your stomach settles first', img: 'assets/life/stomach-bottle.jpg', d: 'Ginger and magnesium go to work on the daily indignity: nausea, bloating, sulfur burps.', q: 'I took my next Zaphira dose the next day and felt just fine again!', who: 'Rhonda Decker, verified buyer' },
-        { n: '2', when: 'DAYS 8-14', t: 'The afternoon crash eases', img: 'assets/life/morning-stretch.png', d: 'B12, D3 and magnesium refill what your energy runs on. Fewer naps, more of your day back.', q: 'At 8-10 days I started dreaming again, happy dreams with color.', who: 'A.M.' },
-        { n: '3', when: 'WEEKS 3-4', t: 'The flatness lifts', img: 'assets/life/reading-grandkids.png', d: 'Saffron, L-theanine and myo-inositol steady your mood. The person your family misses starts showing up again.', q: 'I\'m back to me. I\'m going out. I\'m full of energy. I\'m happy again.', who: 'Clara B., verified customer' },
-        { n: '4', when: 'MONTHS 2-3', t: 'Less hair in the drain', img: 'assets/life/hair-brushing.jpg', d: 'Zinc, copper and D3 need time. Hair is the last change reviewers notice, so give it a full 90 days.', q: 'Reviewers report hair changes by month 2-3. Results vary.', who: 'B.L.' }
+        { n: '1', nuts: [{ x: 'Ginger' }, { x: 'Magnesium' }], when: 'DAYS 1-7', t: 'Your stomach settles first', img: 'assets/life/stomach-bottle.jpg', d: 'Ginger and magnesium go to work on the daily indignity: nausea, bloating, sulfur burps.', q: 'I took my next Zaphira dose the next day and felt just fine again!', who: 'Rhonda Decker, verified buyer' },
+        { n: '2', nuts: [{ x: 'B12' }, { x: 'D3' }, { x: 'Magnesium' }], when: 'DAYS 8-14', t: 'The afternoon crash eases', img: 'assets/life/morning-stretch.png', d: 'B12, D3 and magnesium refill what your energy runs on. Fewer naps, more of your day back.', q: 'At 8-10 days I started dreaming again, happy dreams with color.', who: 'A.M.' },
+        { n: '3', nuts: [{ x: 'Saffron' }, { x: 'L-theanine' }, { x: 'Myo-inositol' }], when: 'WEEKS 3-4', t: 'The flatness lifts', img: 'assets/life/reading-grandkids.png', d: 'Saffron, L-theanine and myo-inositol steady your mood. The person your family misses starts showing up again.', q: 'I\'m back to me. I\'m going out. I\'m full of energy. I\'m happy again.', who: 'Clara B., verified customer' },
+        { n: '4', nuts: [{ x: 'Zinc' }, { x: 'Copper' }, { x: 'D3' }], when: 'MONTHS 2-3', t: 'Less hair in the drain', img: 'assets/life/hair-brushing.jpg', d: 'Zinc, copper and D3 need time. Hair is the last change reviewers notice, so give it a full 90 days.', q: 'Reviewers report hair changes by month 2-3. Results vary.', who: 'B.L.' }
       ],
       when: [
         { t: 'Day 3', q: 'On the third day of taking Zafira, I started having more energy and wanting to actually do things.', who: 'Laurie Miller, verified buyer', chipBg: '#fff', chipFg: 'var(--text-brand)', bg: '#fff', fg: '#000' },
@@ -255,7 +248,7 @@ class Component extends DCLogic {
       ],
       vs: [{ l: 'Made for people on GLP-1', m: '✕' }, { l: 'Saffron extract 30mg', m: '✕' }, { l: 'L-Theanine 200mg', m: '✕' }, { l: 'Myo-Inositol 600mg', m: '✕' }, { l: 'Ginger extract 100mg', m: '✕' }, { l: 'Zinc, copper, D3, B12', m: '✓' }, { l: 'Magnesium glycinate', m: 'Varies' }, { l: '60-day no-return guarantee', m: 'Varies' }],
       faq: [
-        { title: 'Why am I so tired on my GLP-1?', content: "Less food, broken sleep and nausea tell your body it's under stress, so cortisol stays high. That's the wired-but-tired feeling and the 2pm crash. Recovery Foundation has L-theanine (200mg) and magnesium (50mg) to help keep cortisol in check*, plus B12 (50mcg) and D3 (2,000 IU) for daily energy." },
+        { title: 'Why am I so tired on my GLP-1?', content: "Less food, broken sleep and nausea tell your body it's under stress, so cortisol stays high. That's the wired-but-tired feeling and the 2pm crash. Recovery Foundation has L-theanine (200mg) and magnesium (50mg) to help keep cortisol in check, plus B12 (50mcg) and D3 (2,000 IU) for daily energy." },
         { title: 'Why do I feel flat or numb?', content: '38% of our customers named this. Recovery Foundation contains saffron (30mg), L-theanine (200mg) and myo-inositol (600mg) to support a steady, positive mood. Reviewers report mood changes by weeks 3-4.' },
         { title: 'Can I take it with my GLP-1?', content: 'Designed to be taken alongside GLP-1 therapy. Check with your prescriber, especially if you take antidepressants, blood-pressure, thyroid or diabetes medication.' },
         { title: 'How do I take it?', content: 'Take 2 capsules every day, after a meal. One bottle is a 30-day supply.' },

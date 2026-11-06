@@ -27,13 +27,13 @@
   </div>
 
   <div style="grid-row:span 2;display:flex;flex-direction:column;gap:14px;min-width:0">
-    <div style="display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:clamp(15px,1.4cqw,17px)"><span style="color:#F5A623;font-size:1.15em;letter-spacing:1px">★★★★★</span><span>Rated <b>4.92</b>/5 based on <b>12,847+</b> Verified</span></div>
+    <div style="display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:clamp(12px,3.6cqw,17px)"><span style="color:#F5A623;font-size:1.15em;letter-spacing:1px">★★★★★</span><span>Rated <b>4.92</b>/5 based on <b>12,847+</b> Verified</span></div>
     <h1 style="margin:0;font:800 clamp(28px,3.6cqw,44px)/1.12 var(--font-sans);letter-spacing:-0.02em;color:var(--text-brand)">Recovery Foundation:<br>The Triple Refill Protocol</h1>
     <p style="margin:0;font-size:clamp(16px,1.5cqw,19px);line-height:1.45">Carefully formulated to address the specific nutritional needs during <b>GLP-1 treatment</b>.</p>
 
     <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
       <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
-        <li style="display:flex;gap:10px;align-items:center;font-size:18px;line-height:26px"><span style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--zf-green-700);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">✓</span><span>{{ b.t }}</span></li>
+        <li style="display:flex;gap:10px;align-items:center;font-size:clamp(13px,4cqw,18px);line-height:1.4;white-space:nowrap"><span style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--zf-green-700);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">✓</span><span>{{ b.t }}</span></li>
       </sc-for>
     </ul>
 
@@ -55,9 +55,9 @@
     <sc-if value="{{ member }}" hint-placeholder-val="{{ true }}">
     <div style="background:var(--surface-tint);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:8px">
       <b style="text-align:center;color:var(--text-brand);font-size:17px">❦ Your order includes ❦</b>
-      <div style="display:flex;gap:10px;font-size:16px;line-height:22px"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>You're saving <b>{{ saving }}</b> on this order</span></div>
-      <div style="display:flex;gap:10px;font-size:16px;line-height:22px"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>{{ shipLine }}</span></div>
-      <div style="display:flex;gap:10px;font-size:16px;line-height:22px"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>60-Day, No-Return-Required Guarantee</span></div>
+      <div style="display:flex;gap:10px;font-size:clamp(13px,3.9cqw,16px);line-height:22px;white-space:nowrap"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>You're saving <b>{{ saving }}</b> on this order</span></div>
+      <div style="display:flex;gap:10px;font-size:clamp(13px,3.9cqw,16px);line-height:22px;white-space:nowrap"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>{{ shipLine }}</span></div>
+      <div style="display:flex;gap:10px;font-size:clamp(13px,3.9cqw,16px);line-height:22px;white-space:nowrap"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>60-Day, No-Return-Required Guarantee</span></div>
     </div>
     </sc-if>
     <sc-if value="{{ oneTime }}" hint-placeholder-val="{{ false }}">
@@ -86,7 +86,6 @@
       </sc-if>
       <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Accordion" items="{{ faq }}" default-open="{{ 0 }}" hint-size="100%,600px"></x-import>
     </sc-if>
-    <p style="margin:0;font-size:12px;line-height:17px;color:var(--text-muted)">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
   </div>
 
   <div style="border:1px solid var(--border-subtle);border-radius:16px;padding:22px 18px;display:flex;flex-direction:column;gap:16px;min-width:0">
