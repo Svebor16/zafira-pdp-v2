@@ -24,36 +24,7 @@
         <button onClick="{{ t.pick }}" aria-label="Show image" style="width:{{ t.w }};height:4px;padding:0;border:none;border-radius:999px;cursor:pointer;background:{{ t.c }}"></button>
       </sc-for>
     </div>
-    <div style="border-radius:16px;background:#F3F5F1;padding:12px;display:flex;flex-direction:column;gap:10px;font-family:var(--font-sans)">
-      <div style="display:inline-flex;align-self:flex-start;background:#E8ECE6;border-radius:999px;padding:4px;gap:4px">
-        <button onClick="{{ setAskTabA }}" style="border:none;cursor:pointer;border-radius:999px;padding:8px 14px;font:600 15px/18px var(--font-sans);{{ askTabStyle }}">&#10022; Ask Zafira</button>
-        <button onClick="{{ setAskTabI }}" style="border:none;cursor:pointer;border-radius:999px;padding:8px 14px;font:600 15px/18px var(--font-sans);{{ ingTabStyle }}">Ingredient Analysis</button>
-      </div>
-      <sc-if value="{{ askOn }}" hint-placeholder-val="{{ true }}">
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #DADFD6;border-radius:999px;padding:6px 6px 6px 16px">
-            <input value="{{ askQ }}" onChange="{{ setAskQ }}" onKeyDown="{{ askKey }}" placeholder="How does the science work?" style="flex:1;min-width:0;border:none;outline:none;font:400 15px/20px var(--font-sans);background:transparent">
-            <button onClick="{{ askNow }}" style="border:none;cursor:pointer;background:linear-gradient(135deg,#2F5BD3,#3D6FE3);color:#fff;border-radius:999px;padding:9px 18px;font:700 14px/18px var(--font-sans)">Ask</button>
-          </div>
-          <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:2px">
-            <sc-for list="{{ askChips }}" as="c" hint-placeholder-count="3">
-              <button onClick="{{ c.pick }}" style="flex-shrink:0;border:none;cursor:pointer;background:#E8ECE6;border-radius:999px;padding:8px 14px;font:500 13px/16px var(--font-sans);color:#222;white-space:nowrap">{{ c.q }}</button>
-            </sc-for>
-          </div>
-          <sc-if value="{{ askA }}" hint-placeholder-val="{{ false }}">
-            <div style="background:#fff;border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.45;color:#222">{{ askA }}</div>
-          </sc-if>
-        </div>
-      </sc-if>
-      <sc-if value="{{ ingOn }}" hint-placeholder-val="{{ false }}">
-        <div style="background:#fff;border-radius:12px;padding:6px 14px;display:flex;flex-direction:column">
-          <sc-for list="{{ ingList }}" as="ig" hint-placeholder-count="10">
-            <div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #ECEFE9;font-size:15px"><span>{{ ig.n }}</span><b>{{ ig.d }}</b></div>
-          </sc-for>
-        </div>
-      </sc-if>
-      <span style="font-size:12px;color:#666">General information, not medical advice. Ask your prescriber before starting.</span>
-    </div>
+    
   </div>
 
   <div style="grid-row:span 2;display:flex;flex-direction:column;gap:14px;min-width:0">
@@ -103,10 +74,35 @@
     <sc-if value="{{ member }}" hint-placeholder-val="{{ true }}"><div style="text-align:center;font-size:15px">Your refill ships every month. Cancel anytime.</div></sc-if>
     <button onClick="{{ toggleMode }}" style="align-self:center;background:none;border:none;font:500 16px var(--font-sans);text-decoration:underline;cursor:pointer;color:#000">{{ modeLink }}</button>
 
-    <div style="border:1.5px solid var(--border-brand);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:8px">
-      <b style="display:flex;align-items:center;gap:8px;color:var(--text-brand);font-size:18px"><span style="width:20px;height:20px;border-radius:50%;background:var(--surface-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1">+</span>Clinicians' Choice</b>
-      <span style="font-size:16px;line-height:23px"><b>524 clinicians</b> share this on FrontrowMD without compensation.</span>
-      <span style="display:flex;align-items:center;gap:10px;font-size:14px"><img loading="lazy" src="assets/clinicians-avatars.png" alt="" style="height:24px"><span style="text-decoration:underline">View clinicians &amp; learn more</span></span>
+    <div style="border-radius:16px;background:#F3F5F1;padding:12px;display:flex;flex-direction:column;gap:10px;font-family:var(--font-sans)">
+      <div style="display:inline-flex;align-self:flex-start;background:#E8ECE6;border-radius:999px;padding:4px;gap:4px">
+        <button onClick="{{ setAskTabA }}" style="border:none;cursor:pointer;border-radius:999px;padding:8px 14px;font:600 15px/18px var(--font-sans);{{ askTabStyle }}">&#10022; Ask Zafira</button>
+        <button onClick="{{ setAskTabI }}" style="border:none;cursor:pointer;border-radius:999px;padding:8px 14px;font:600 15px/18px var(--font-sans);{{ ingTabStyle }}">Ingredient Analysis</button>
+      </div>
+      <sc-if value="{{ askOn }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #DADFD6;border-radius:999px;padding:6px 6px 6px 16px">
+            <input value="{{ askQ }}" onChange="{{ setAskQ }}" onKeyDown="{{ askKey }}" placeholder="How does the science work?" style="flex:1;min-width:0;border:none;outline:none;font:400 15px/20px var(--font-sans);background:transparent">
+            <button onClick="{{ askNow }}" style="border:none;cursor:pointer;background:linear-gradient(135deg,#2F5BD3,#3D6FE3);color:#fff;border-radius:999px;padding:9px 18px;font:700 14px/18px var(--font-sans)">Ask</button>
+          </div>
+          <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:2px">
+            <sc-for list="{{ askChips }}" as="c" hint-placeholder-count="3">
+              <button onClick="{{ c.pick }}" style="flex-shrink:0;border:none;cursor:pointer;background:#E8ECE6;border-radius:999px;padding:8px 14px;font:500 13px/16px var(--font-sans);color:#222;white-space:nowrap">{{ c.q }}</button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ askA }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#fff;border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.45;color:#222">{{ askA }}</div>
+          </sc-if>
+        </div>
+      </sc-if>
+      <sc-if value="{{ ingOn }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#fff;border-radius:12px;padding:6px 14px;display:flex;flex-direction:column">
+          <sc-for list="{{ ingList }}" as="ig" hint-placeholder-count="10">
+            <div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #ECEFE9;font-size:15px"><span>{{ ig.n }}</span><b>{{ ig.d }}</b></div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <span style="font-size:12px;color:#666">General information, not medical advice. Ask your prescriber before starting.</span>
     </div>
     <sc-if value="{{ showFacebook }}" hint-placeholder-val="{{ true }}"><img loading="lazy" src="assets/facebook-comments-crop.jpg" alt="Facebook comments from Crystal Wold and Jen M. Greenway" style="width:100%;max-width:440px;align-self:center;display:block"></sc-if>
 
