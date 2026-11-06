@@ -39,17 +39,17 @@
 
     <div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:var(--border-subtle)"></span><span style="font-size:18px">Become a Member</span><span style="flex:1;height:1px;background:var(--border-subtle)"></span></div>
 
-    <div style="display:flex;flex-direction:column;gap:10px;padding-top:10px">
+    <div style="display:flex;flex-direction:column;gap:8px;padding-top:6px">
       <sc-for list="{{ bundles }}" as="o" hint-placeholder-count="3">
-        <button onClick="{{ o.pick }}" style="position:relative;display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:14px;cursor:pointer;font-family:var(--font-sans);text-align:left;border:{{ o.border }};background:{{ o.bg }}">
+        <button onClick="{{ o.pick }}" style="position:relative;display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:10px 14px;border-radius:12px;cursor:pointer;font-family:var(--font-sans);text-align:left;border:{{ o.border }};background:{{ o.bg }}">
           <span style="width:20px;height:20px;border-radius:50%;border:2px solid {{ o.radioBorder }};background:{{ o.radioBg }};flex-shrink:0;box-sizing:border-box"></span>
-          <img loading="lazy" src="{{ o.img }}" alt="" style="height:52px;width:44px;object-fit:contain;flex-shrink:0">
-          <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
-            <span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:17px;font-weight:700">{{ o.label }}<sc-if value="{{ o.tag }}" hint-placeholder-val="{{ false }}"><span style="background:var(--surface-brand);color:#fff;font:700 12px/16px var(--font-sans);padding:3px 8px;border-radius:6px">{{ o.tag }}</span></sc-if></span>
+          <img loading="lazy" src="{{ o.img }}" alt="" style="height:40px;width:36px;object-fit:contain;flex-shrink:0">
+          <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px">
+            <span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:16px;line-height:20px;font-weight:700">{{ o.label }}<sc-if value="{{ o.tag }}" hint-placeholder-val="{{ false }}"><span style="background:var(--zf-saffron-purple);color:#fff;font:700 12px/16px var(--font-sans);padding:3px 8px;border-radius:6px">{{ o.tag }}</span></sc-if></span>
             <span style="font-size:14px;color:var(--text-muted)">{{ o.sub }}</span>
           </span>
           <span style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0">
-            <b style="font-size:18px">{{ o.each }}/ea</b>
+            <b style="font-size:17px;line-height:22px">{{ o.each }}/ea</b>
             <span style="font-size:13px;color:var(--text-muted)">{{ o.total }} total</span>
           </span>
         </button>
