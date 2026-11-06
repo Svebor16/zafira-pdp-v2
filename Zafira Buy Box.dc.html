@@ -9,6 +9,7 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/styles.css">
+<style>#iframe-frontrow-quant{height:0px}#frontrow-badge{position:relative;display:flex;width:100%;background:#fff;border:1.5px solid #2c5233;border-radius:10px;padding:10px 14px;box-shadow:0 1px 5px rgba(0,0,0,.05);box-sizing:border-box}.iframe-frontrow{width:100%;margin:0}.iframe-modal-frontrow{display:none;position:fixed;z-index:99999999;left:0;top:0;right:0;bottom:0;width:100%;height:100%;overflow:hidden}</style>
 <script src="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/_ds_bundle.js"></script>
 </helmet>
 <div id="buy" style="max-width:1240px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:12px 48px;align-items:start;font-family:var(--font-sans);color:#000">
@@ -24,6 +25,10 @@
         <button onClick="{{ t.pick }}" aria-label="Show image" style="width:{{ t.w }};height:4px;padding:0;border:none;border-radius:999px;cursor:pointer;background:{{ t.c }}"></button>
       </sc-for>
     </div>
+    <div id="frontrow-badge">
+<iframe class="iframe-frontrow" id="iframe-frontrow-quant" title="FrontrowMD Clinicians' Choice Badge" frameborder="0" src="https://app.thefrontrowhealth.com/api/widgets?presentation_type=quant&product_id=6531"></iframe>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="position:absolute;width:1px;height:1px;opacity:0" onload="if(!window.__frQuantBoot){window.__frQuantBoot=1;var s=document.createElement('script');s.async=true;s.src='https://app.thefrontrowhealth.com/api/widgets/script?presentation_type=quant&product_id=6531';document.head.appendChild(s);}">
+</div>
   </div>
 
   <div style="grid-row:span 2;display:flex;flex-direction:column;gap:14px;min-width:0">
