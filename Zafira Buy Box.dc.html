@@ -120,7 +120,7 @@ class Component extends DCLogic {
     const compliant = !!this.props.compliant;
     const { img, bundle, oneTime, added } = this.state;
     const cdn = f => 'https://www.zafiraorganics.com/cdn/shop/files/' + f;
-    const gal = ['assets/product/product-1.png', 'assets/product/product-2.png', 'assets/product/product-3.png', 'assets/product/product-4.png', 'assets/product/product-5.png', 'assets/product/product-6.png', 'assets/product/product-7.png'].map(f => ({ main: f, th: f }));
+    const gal = ['assets/pdp-main.png', 'assets/product/product-1.png', 'assets/product/product-2.png', 'assets/product/product-3.png', 'assets/product/product-4.png', 'assets/product/product-5.png', 'assets/product/product-6.png', 'assets/product/product-7.png'].map(f => ({ main: f, th: f }));
     const go = i => this.setState({ img: (i + gal.length) % gal.length });
     const svg = (paths) => h('svg', { viewBox: '0 0 24 24', width: 30, height: 30, fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round' }, paths.map((d, k) => h('path', { key: k, d })));
     const I = {
