@@ -1,0 +1,13 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;
+--container-max:1200px;--container-narrow:760px;--gutter:20px;
+--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:24px;--radius-pill:999px;
+--border-width:1px;
+--shadow-card:0 2px 10px rgba(0,0,0,0.06);
+--shadow-raised:0 8px 28px rgba(3,92,5,0.12);
+--shadow-button:0 4px 0 #1C5632;
+--ease-out:cubic-bezier(0.22,1,0.36,1); /* @kind other */
+
+--duration-fast:150ms; /* @kind other */
+--duration-base:250ms; /* @kind other */
+}

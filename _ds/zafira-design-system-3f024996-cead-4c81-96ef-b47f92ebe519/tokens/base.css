@@ -1,0 +1,2 @@
+body{margin:0;font-family:var(--font-sans);font-size:var(--type-body-size);line-height:var(--type-body-line);color:var(--text-body);background:var(--surface-page);-webkit-font-smoothing:antialiased}
+a{color:var(--text-brand)}a:hover{color:var(--zf-green-900)}

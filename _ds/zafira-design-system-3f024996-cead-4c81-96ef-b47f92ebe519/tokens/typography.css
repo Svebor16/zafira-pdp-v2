@@ -1,0 +1,18 @@
+:root{
+--font-sans:"Inter",sans-serif;
+--font-serif-display:"DM Serif Display",Georgia,serif;
+--font-heading:"DM Serif Display",Georgia,serif;
+--font-panel:"Poppins","Inter",sans-serif;
+
+/* Headline + paragraph spec supplied by brand */
+--type-h1-size:50px;--type-h1-line:49px;--type-h1-weight:400;
+--type-h2-size:36px;--type-h2-line:40px;--type-h2-weight:400;
+--type-h3-size:24px;--type-h3-line:30px;--type-h3-weight:400;
+--type-h4-size:20px;--type-h4-line:26px;--type-h4-weight:400;
+--type-body-size:18px;--type-body-line:30px;--type-body-weight:400;
+--type-small-size:15px;--type-small-line:22px;
+--type-caption-size:13px;--type-caption-line:18px;
+--type-eyebrow-size:14px;--type-eyebrow-tracking:0.08em;
+--type-button-size:17px;--type-button-weight:700;--type-button-tracking:0.04em;
+--type-h1-size-mobile:32px;--type-h1-line-mobile:36px;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/styles.css">
+<script src="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/_ds_bundle.js"></script>
+</helmet>
+<div style="width:100%;font-family:var(--font-sans);color:#000">
+
+<sc-if value="{{ is.announce }}" hint-placeholder-val="{{ false }}">
+<div style="background:var(--surface-brand);color:#fff;text-align:center;font:600 14px/20px var(--font-sans);letter-spacing:.04em;padding:8px 12px">FREE SHIPPING ON 2+ BOTTLES · 60-DAY, NO-RETURN-REQUIRED GUARANTEE</div>
+<header style="background:#fff;border-bottom:1px solid var(--border-subtle)">
+  <div style="max-width:1240px;margin:0 auto;padding:14px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center">
+    <span></span>
+    <img loading="lazy" src="assets/wordmark-green.png" alt="Zafira" style="height:26px">
+    <span style="justify-self:end;font-size:16px;font-weight:600;white-space:nowrap">Cart (0)</span>
+  </div>
+</header>
+</sc-if>
+
+<sc-if value="{{ is.ribbon }}" hint-placeholder-val="{{ false }}">
+<div style="padding:24px 20px;border-bottom:1px solid var(--border-subtle);background:#fff">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px;text-align:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="color:var(--zf-judgeme);font-size:22px;letter-spacing:2px">★★★★★</span><b style="font-size:18px">4.9/5 from 12,847+ reviews</b><span style="font-size:14px;color:var(--text-muted)">Verified buyers</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><x-import component-from-global-scope="ZafiraDesignSystem_3f0249.StarRating" rating="{{ 4.8 }}" size="{{ 22 }}" hint-size="120px,22px"></x-import><b style="font-size:18px">Excellent, 4.8/5</b><span style="font-size:14px;color:var(--text-muted)">456 reviews on Trustpilot</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><img loading="lazy" src="assets/clinicians-avatars.png" alt="" style="height:24px"><b style="font-size:18px">541 clinicians</b><span style="font-size:14px;color:var(--text-muted)">Share it on FrontrowMD without compensation</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="font:700 20px/22px var(--font-sans);color:var(--text-brand)">60 days</span><b style="font-size:18px">No-return-required</b><span style="font-size:14px;color:var(--text-muted)">Full refund, no questions asked</span></div>
+  </div>
+</div>
+<div style="background:#035C05;padding:12px 20px;display:flex;justify-content:center"><img loading="lazy" src="assets/press-bar.png" alt="As featured in The Journal of Nutrition, allure, BAZAAR, Women's Health" style="width:100%;max-width:860px;display:block"></div>
+</sc-if>
+
+<sc-if value="{{ is.problem }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:16px">
+  <div style="display:flex;flex-direction:column;gap:10px;text-align:center;align-items:center">
+    <span style="font:700 13px/16px var(--font-sans);letter-spacing:.08em;color:var(--text-brand)">WHAT 1,709 OF OUR CUSTOMERS TOLD US:</span>
+    <h2 style="margin:0;font:400 clamp(30px,4cqw,44px)/1.08 var(--font-heading);text-wrap:balance;max-width:820px">The Scale Is Moving. So Why Do You Feel This Bad?</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(46%,160px),1fr));border:1px solid var(--border-subtle);border-radius:16px;background:#fff;overflow:hidden">
+    <div style="padding:14px 16px;display:flex;align-items:baseline;gap:8px;border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)"><b style="font:400 28px/1 var(--font-heading);color:var(--text-brand)">57%</b><span style="font-size:14px;line-height:18px">Exhausted</span></div>
+    <div style="padding:14px 16px;display:flex;align-items:baseline;gap:8px;border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)"><b style="font:400 28px/1 var(--font-heading);color:var(--text-brand)">38%</b><span style="font-size:14px;line-height:18px">Flat or numb</span></div>
+    <div style="padding:14px 16px;display:flex;align-items:baseline;gap:8px;border-right:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)"><b style="font:400 28px/1 var(--font-heading);color:var(--text-brand)">22%</b><span style="font-size:14px;line-height:18px">Hair shedding</span></div>
+    <div style="padding:14px 16px;display:flex;align-items:baseline;gap:8px;border-bottom:1px solid var(--border-subtle)"><b style="font:400 28px/1 var(--font-heading);color:var(--text-brand)">20%</b><span style="font-size:14px;line-height:18px">Gut trouble</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:28px;align-items:center;background:var(--zf-forest-950);color:#fff;border-radius:24px;overflow:hidden">
+    <div style="padding:clamp(24px,4cqw,44px);display:flex;flex-direction:column;gap:14px">
+      <span style="font:700 13px/16px var(--font-sans);letter-spacing:.08em;color:var(--zf-green-300)">IT'S NOT YOU. IT'S THE HALF-PLATE DEFICIT.</span>
+      <h3 style="margin:0;font:400 clamp(26px,3.2cqw,36px)/1.12 var(--font-heading)">Your GLP-1 turned your appetite down. It didn't turn your body's needs down.</h3>
+      <p style="margin:0;font-size:17px;line-height:27px">Eating half as much means getting a fraction of the B12, magnesium, zinc and vitamin D your energy, mood and hair run on. 36% of our customers suspected their medication but didn't know what to call it. Now you do.</p>
+    </div>
+    <img loading="lazy" src="assets/life/appetite-bowl.png" alt="Woman eating a small healthy bowl" style="width:100%;height:100%;min-height:200px;max-height:320px;object-fit:cover;display:block">
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is.refill }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px;align-items:center">
+  <div style="display:flex;flex-direction:column;gap:12px;text-align:center;align-items:center">
+    <span style="font:700 13px/16px var(--font-sans);letter-spacing:.08em;color:var(--text-brand)">HOW IT WORKS:</span>
+    <h2 style="margin:0;font:400 clamp(30px,4cqw,44px)/1.08 var(--font-heading);text-wrap:balance">The Triple Refill Protocol, In 3 Steps</h2>
+    <p style="margin:0;font-size:17px;line-height:26px;color:var(--zf-ink-700);max-width:640px">10 ingredients at labelled doses, in 2 capsules after a meal. One routine instead of a counter full of bottles.</p>
+  </div>
+  <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;align-items:stretch">
+    <sc-for list="{{ story }}" as="st" hint-placeholder-count="3">
+      <div style="background:{{ st.bg }};color:{{ st.fg }};border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:10px"><span style="width:28px;height:28px;border-radius:50%;background:{{ st.dotBg }};color:{{ st.dotFg }};font:700 13px/28px var(--font-sans);text-align:center;flex-shrink:0">{{ st.n }}</span><b style="font-size:17px;line-height:22px">{{ st.t }}</b></div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ st.bars }}" as="br" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:.04em">{{ br.l }}</span><div style="height:12px;border-radius:999px;background:{{ st.track }};overflow:hidden"><div style="height:100%;width:{{ br.w }};background:{{ br.c }};border-radius:999px"></div></div></div>
+          </sc-for>
+        </div>
+        <span style="font-size:14px;line-height:20px">{{ st.d }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px">
+    <sc-for list="{{ refills }}" as="r" hint-placeholder-count="3">
+      <div style="display:flex;gap:12px;align-items:center;background:var(--surface-tint);border-radius:16px;padding:12px">
+        <img loading="lazy" src="{{ r.img }}" alt="" style="width:72px;height:72px;border-radius:10px;object-fit:cover;flex-shrink:0">
+        <div style="display:flex;flex-direction:column;gap:2px;min-width:0"><b style="font-size:15px;color:var(--text-brand)">{{ r.n }} {{ r.t }}</b><span style="font-size:13px;line-height:18px">{{ r.short }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+  <span style="font-size:12px;color:var(--text-muted)">Illustration of the idea, not measured data.</span>
+  <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Button" size="lg" on-click="{{ toBuy }}" hint-size="320px,64px">Shop Recovery Foundation</x-import>
+</div>
+</sc-if>
+
+<sc-if value="{{ is.timeline }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px;align-items:center">
+  <div style="display:flex;flex-direction:column;gap:12px;text-align:center;align-items:center">
+    <span style="font:700 13px/16px var(--font-sans);letter-spacing:.08em;color:var(--text-brand)">WHAT TO EXPECT:</span>
+    <h2 style="margin:0;font:400 clamp(30px,4cqw,44px)/1.08 var(--font-heading);text-wrap:balance">How Long Until I See A Difference?</h2>
+    <p style="margin:0;font-size:17px;line-height:26px;color:var(--zf-ink-700);max-width:640px">Reviewers report the same order of changes. Take 2 capsules every day, after a meal.</p>
+  </div>
+  <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(44%,220px),1fr));gap:12px">
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="position:relative"><img loading="lazy" src="{{ s.img }}" alt="" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;display:block"><span style="position:absolute;top:8px;left:8px;background:#fff;color:var(--text-brand);font:700 12px/15px var(--font-sans);padding:5px 9px;border-radius:999px">{{ s.when }}</span></div>
+        <b style="font-size:15px;line-height:20px">{{ s.t }}</b>
+        <span style="font-size:13px;line-height:19px;color:var(--zf-ink-700)">{{ s.d }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="background:var(--surface-tint);border-radius:16px;padding:18px 22px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:center;text-align:center">
+    <span style="font-size:16px;line-height:24px">Results vary. Most changes show after the first bottle runs out. <b>That's why 3 bottles is our Best Deal at $0.88 a day.</b></span>
+    <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Button" on-click="{{ toBuy }}" hint-size="240px,56px">Get the 3-bottle plan</x-import>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is.compare }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1100px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:32px;align-items:center">
+  <img loading="lazy" src="assets/bottle-on-counter.jpg" alt="Recovery Foundation next to a counter of supplement bottles" style="width:100%;border-radius:16px;display:block">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <span style="font:700 13px/16px var(--font-sans);letter-spacing:.08em;color:var(--text-brand)">ONE ROUTINE, NOT EIGHT BOTTLES:</span>
+    <h2 style="margin:0;font:400 clamp(28px,3.6cqw,40px)/1.1 var(--font-heading)">Replace The Counter Full Of Bottles</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border-subtle);border-radius:16px;overflow:hidden;font-size:15px;line-height:22px">
+      <div style="padding:16px;background:var(--zf-ink-100);display:flex;flex-direction:column;gap:6px"><b>Buying separately</b><span>Saffron extract</span><span>L-Theanine</span><span>Myo-Inositol</span><span>Magnesium</span><span>Ginger extract</span><span>Zinc &amp; Copper</span><span>Vitamin D3</span><span>Vitamin B12</span></div>
+      <div style="padding:16px;background:var(--surface-tint);display:flex;flex-direction:column;gap:6px"><b style="color:var(--text-brand)">Recovery Foundation</b><span>✓ All 10 ingredients</span><span>✓ 2 capsules a day</span><span>✓ After a meal</span><span>✓ Capsules, no powder to mix</span><span>✓ Made in USA</span><span>✓ 3rd party tested</span><span>✓ From $0.88 a day</span></div>
+    </div>
+    <p style="margin:0;font-size:15px;line-height:23px;font-style:italic">“I could eliminate the magnesium, ginger, etc. that my wife was taking with ... one combined product that hit on some of the main side-effects.” <b style="font-style:normal">Kevin Noel, Trustpilot</b></p>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is.mosaic }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1240px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px">
+  <h2 style="margin:0;font:400 clamp(30px,4cqw,44px)/1.08 var(--font-heading);text-align:center;text-wrap:balance">Get Back To The Life You're Losing Weight For</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(46%,260px),1fr));gap:12px">
+    <sc-for list="{{ mosaic }}" as="m" hint-placeholder-count="8">
+      <img loading="lazy" src="{{ m }}" alt="" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;display:block">
+    </sc-for>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is.quality }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px">
+  <div style="display:flex;flex-direction:column;gap:12px;text-align:center;align-items:center">
+    <span style="font:700 13px/16px var(--font-sans);letter-spacing:.08em;color:var(--text-brand)">READ THE LABEL BEFORE YOU BUY:</span>
+    <h2 style="margin:0;font:400 clamp(30px,4cqw,44px)/1.08 var(--font-heading);text-wrap:balance">Nothing Hidden. Every Dose On The Label.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;align-items:start">
+    <img loading="lazy" src="assets/supplement-facts.jpg" alt="Recovery Foundation supplement facts" style="width:100%;border-radius:16px;display:block;border:1px solid var(--border-subtle)">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="border:1px solid var(--border-subtle);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:6px"><b style="font-size:16px">FrontrowMD Clinician Analysis</b><span style="font-size:14px;line-height:21px">Board-certified physicians at FrontrowMD published a research analysis on key ingredients. Authors: Dr. Landon Green (NPI 1841851185), Dr. Salma Green (NPI 1003301417), Dr. Shani Alam (NPI 1659465516).</span></div>
+      <div style="border:1px solid var(--border-subtle);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:6px"><b style="font-size:16px">Taking other medication?</b><span style="font-size:14px;line-height:21px">Designed to be taken alongside GLP-1 therapy. Check with your prescriber, especially if you take antidepressants, blood-pressure, thyroid or diabetes medication.</span></div>
+      <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.CheckList" size="sm" items="{{ qualityList }}" hint-size="100%,130px"></x-import>
+      <a href="assets/certificate-of-analysis.jpg" target="_blank" style="align-self:flex-start;font-size:14px;font-weight:600;text-decoration:underline">View third-party certificate of analysis →</a>
+      <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Notice" title="Counterfeit Warning" hint-size="100%,110px">Zafira Recovery Foundation is only sold on this website. Any product listed on Amazon or eBay is counterfeit and not genuine Zafira Recovery Foundation.</x-import>
+    </div>
+  </div>
+</div>
+<div style="background:#055C05;padding:8px 20px;display:flex;justify-content:center;margin-top:40px"><img loading="lazy" src="assets/trust-badges-bar.png" alt="100% Made in USA, 3rd party tested, FDA-registered facility, therapeutic doses" style="width:100%;max-width:1000px;display:block"></div>
+</sc-if>
+
+<sc-if value="{{ is.faq }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:820px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px">
+  <h2 style="margin:0;font:400 clamp(30px,4cqw,44px)/1.08 var(--font-heading);text-align:center">Still Deciding? Read This.</h2>
+  <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Accordion" items="{{ faq }}" default-open="{{ 0 }}" hint-size="100%,520px"></x-import>
+</div>
+</sc-if>
+
+<sc-if value="{{ is.guarantee }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1100px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:32px;align-items:center">
+  <img loading="lazy" src="assets/guarantee-60-day.jpg" alt="60-day money-back guarantee, no return required" style="width:100%;border-radius:16px;display:block">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <h2 style="margin:0;font:400 clamp(30px,4cqw,44px)/1.08 var(--font-heading)">Try Zafira Today. <em>Keep</em> It Only If It Works For Your Body.</h2>
+    <p style="margin:0;font-size:17px;line-height:27px">Take it for 60 days. If you don't feel significantly better, email support@zafiraorganics.com for a full refund. No return required, no questions asked.</p>
+    <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.CheckList" size="sm" items="{{ guaranteeList }}" hint-size="100%,100px"></x-import>
+    <div><x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Button" size="lg" on-click="{{ toBuy }}" hint-size="320px,64px">Claim my 3-bottle plan</x-import></div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ is.footer }}" hint-placeholder-val="{{ false }}">
+<footer>
+  <div style="background:var(--surface-tint);padding:44px 20px"><x-import component-from-global-scope="ZafiraDesignSystem_3f0249.EmailSignup" hint-size="100%,120px"></x-import></div>
+  <div style="background:var(--surface-brand);color:#fff;padding:40px 20px 28px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;font-size:15px;line-height:26px">
+      <div><b style="font-size:16px">Shop</b><br>Home<br>Recovery Foundation<br>Track My Order<br>Contact Us</div>
+      <div><b style="font-size:16px">Information</b><br>Shipping Policy<br>Refund Policy<br>Subscription Policy<br>Privacy Policy<br>Terms of Service<br>Ambassador Program</div>
+      <div><b style="font-size:16px">Need to Get in Touch?</b><br>support@zafiraorganics.com<br>Monday - Friday, 9am - 5pm EST<br>1309 Coffeen Avenue STE 1200, Sheridan Wyoming, 82801<br>Zafira Organics LLC</div>
+    </div>
+    <div style="max-width:1200px;margin:24px auto 0;border-top:1px solid rgba(255,255,255,.25);padding-top:16px;font-size:14px;line-height:21px">© 2026 ZAFIRA. *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</div>
+  </div>
+</footer>
+</sc-if>
+
+<sc-if value="{{ is.sticky }}" hint-placeholder-val="{{ false }}">
+<div style="background:#fff;border-top:1px solid var(--border-subtle);box-shadow:0 -2px 10px rgba(0,0,0,.08);padding:10px 16px;display:flex;align-items:center;gap:12px">
+  <img loading="lazy" src="assets/bundle-1.png" alt="" style="height:44px">
+  <span style="flex:1;min-width:0;display:flex;flex-direction:column;font-size:16px;line-height:21px"><b>Recovery Foundation</b><span style="color:var(--text-muted)">From $0.88/day · <span style="color:var(--zf-judgeme)">★</span> 4.9 (12,847+)</span></span>
+  <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Button" size="sm" on-click="{{ toBuy }}" hint-size="160px,44px">Select bundle</x-import>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;section&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;announce&quot;,&quot;ribbon&quot;,&quot;problem&quot;,&quot;refill&quot;,&quot;timeline&quot;,&quot;compare&quot;,&quot;mosaic&quot;,&quot;quality&quot;,&quot;faq&quot;,&quot;guarantee&quot;,&quot;footer&quot;,&quot;sticky&quot;],&quot;default&quot;:&quot;refill&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const sec = this.props.section ?? 'refill';
+    const keys = ['announce', 'ribbon', 'problem', 'refill', 'timeline', 'compare', 'mosaic', 'quality', 'faq', 'guarantee', 'footer', 'sticky'];
+    const is = {}; keys.forEach(k => is[k] = k === sec);
+    const L = f => 'assets/life/' + f;
+    return {
+      is,
+      toBuy: () => { const el = document.getElementById('buy'); if (!el) return; const sc = el.closest('[data-artboard]'); if (sc) { sc.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' }); } else { window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' }); } },
+      refills: [
+        { img: L('jogging.png'), n: 'REFILL 01:', t: 'Energy', short: 'B12 (50mcg), D3 (2,000 IU), Magnesium (50mg), Vitamin C (50mg)', items: ['Vitamin B12 (50mcg Methylcobalamin)', 'Vitamin D3 (2,000 IU)', 'Magnesium (50mg)', 'Vitamin C (50mg)'] },
+        { img: L('family-dinner.png'), n: 'REFILL 02:', t: 'Mood', short: 'Saffron (30mg), L-Theanine (200mg), Myo-Inositol (600mg)', items: ['Saffron Extract (30mg)', 'L-Theanine (200mg)', 'Myo-Inositol (600mg)'] },
+        { img: L('hair-brushing.jpg'), n: 'REFILL 03:', t: 'Hair & Digestion', short: 'Zinc & Copper (10mg / 0.5mg), Ginger (100mg)', items: ['Zinc & Copper (10mg / 0.5mg)', 'Ginger Extract (100mg)', 'Vitamin D3 (2,000 IU)'] }
+      ],
+      story: (() => { const G = 'var(--zf-green-300)', R = 'var(--zf-saffron-stigma)', W = '#fff'; const bars = (w, c) => [{ l: 'ENERGY', w: w[0], c }, { l: 'MOOD', w: w[1], c }, { l: 'HAIR & DIGESTION', w: w[2], c }]; return [
+        { n: '1', t: 'Before your GLP-1', d: 'A full plate covers what your energy, mood and hair run on.', bg: '#fff', fg: '#000', track: 'var(--zf-ink-100)', dotBg: 'var(--zf-ink-100)', dotFg: '#000', bars: bars(['92%', '90%', '88%'], 'var(--zf-green-600)') },
+        { n: '2', t: 'On your GLP-1', d: 'Half the food means half the nutrients. This is the Half-Plate Deficit.', bg: '#fff', fg: '#000', track: 'var(--zf-ink-100)', dotBg: R, dotFg: W, bars: bars(['45%', '40%', '48%'], R) },
+        { n: '3', t: 'With Recovery Foundation', d: '2 capsules a day refill the three drains, without adding food.', bg: 'var(--surface-brand)', fg: '#fff', track: 'rgba(255,255,255,.2)', dotBg: G, dotFg: '#000', bars: bars(['90%', '88%', '86%'], G) }
+      ]; })(),
+      steps: [
+        { img: L('stomach-bottle.jpg'), when: 'Days 1-7', t: 'Digestion starts to settle', d: 'Ginger and magnesium go to work first. Less bloating, calmer stomach.' },
+        { img: L('walking.png'), when: 'Weeks 1-2', t: 'Energy starts to come back', d: 'Fewer afternoon crashes. "I don’t always feel like I need a nap after lunch anymore."' },
+        { img: L('reading-grandkids.png'), when: 'Weeks 3-4', t: 'Mood feels steadier', d: 'The flat, gray feeling lifts. You want to do things again.' },
+        { img: L('hair-brushing.jpg'), when: 'Weeks 6-8', t: 'Hair support builds', d: 'Zinc, copper and D3 need time. Hair is the last change reviewers notice.' }
+      ],
+      mosaic: [L('closeup-bottle.jpg'), L('baking.png'), L('hiking.png'), L('yoga-street.png'), L('grandkids-driveway.png'), L('newspaper-bottle.png'), L('sleep-bottle.png'), L('morning-stretch.png'), L('capsule-eye.jpg'), L('mirror-sportsbra.png'), L('kitchen-bottle.png'), L('stomach-inset.jpg')],
+      qualityList: ['Made in USA, 3rd party tested', '100% vegan, non-GMO, gluten-free', 'Free from dairy, soy, artificial colors or preservatives', '60 capsules = 30-day supply'],
+      guaranteeList: ['60-Day, No-Return-Required Guarantee', 'Free shipping on 2+ bottles', 'Ships in 1-2 working days, USA delivery in 1-3 business days'],
+      faq: [
+        { title: 'Is it worth the price?', content: 'On the 3-bottle plan it is $26.46 a bottle, or $0.88 a day, for 10 ingredients in one capsule routine. Buying them separately means 8 bottles. And the 60-day guarantee means you only keep paying if it works.' },
+        { title: 'How do I know this is legit?', content: '12,847+ verified reviews on, 4.8/5 on Trustpilot, 541 clinicians sharing it on FrontrowMD without compensation. It is only sold on this website. Listings on Amazon or eBay are counterfeit. Real support: support@zafiraorganics.com, Monday to Friday, 9am to 5pm EST.' },
+        { title: 'Will it work for me?', content: 'Most reviewers notice digestion first, within days, then energy within weeks and mood by weeks 3-4. Hair takes 6-8 weeks. Results vary. If it does not work for you, you get a full refund.' },
+        { title: 'Can I take this with my GLP-1?', content: 'Designed to be taken alongside GLP-1 therapy. Check with your prescriber, especially if you take antidepressants, blood-pressure, thyroid or diabetes medication.' },
+        { title: 'How does the membership work?', content: 'Your refill ships every month at member pricing. Skip a month anytime or cancel in two clicks from your account. No phone call, no questions. Prefer no membership? Choose one-time purchase at $59.90.' },
+        { title: "What if it doesn't work for me?", content: "60-day money back guarantee. If you don't feel significantly better, full refund, no questions asked. No return required." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

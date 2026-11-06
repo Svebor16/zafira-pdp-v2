@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/styles.css">
+<script src="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/_ds_bundle.js"></script>
+</helmet>
+<div id="buy" style="max-width:1240px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:12px 48px;align-items:start;font-family:var(--font-sans);color:#000">
+
+  <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+    <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1/1;background:#F1F5EE">
+      <img loading="lazy" src="{{ mainImg }}" alt="Zafira Recovery Foundation Capsules" style="width:100%;height:100%;object-fit:cover;display:block">
+      <button onClick="{{ prev }}" aria-label="Previous image" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.12);font-size:20px;cursor:pointer">‹</button>
+      <button onClick="{{ next }}" aria-label="Next image" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.12);font-size:20px;cursor:pointer">›</button>
+    </div>
+    <div style="display:flex;gap:6px;justify-content:center;padding:2px 0">
+      <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="10">
+        <button onClick="{{ t.pick }}" aria-label="Show image" style="width:{{ t.w }};height:4px;padding:0;border:none;border-radius:999px;cursor:pointer;background:{{ t.c }}"></button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="grid-row:span 2;display:flex;flex-direction:column;gap:14px;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:clamp(15px,1.4cqw,17px)"><span style="color:#F5A623;font-size:1.15em;letter-spacing:1px">★★★★★</span><span>Rated <b>4.92</b>/5 based on <b>12,847+</b> Verified</span></div>
+    <h1 style="margin:0;font:800 clamp(28px,3.6cqw,44px)/1.12 var(--font-sans);letter-spacing:-0.02em;color:var(--text-brand)">Recovery Foundation:<br>The Triple Refill Protocol</h1>
+    <p style="margin:0;font-size:clamp(16px,1.5cqw,19px);line-height:1.45">Carefully formulated to address the specific nutritional needs during <b>GLP-1 treatment</b>.</p>
+
+    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+        <li style="display:flex;gap:10px;align-items:center;font-size:18px;line-height:26px"><span style="flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--zf-green-700);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">✓</span><span>{{ b.t }}</span></li>
+      </sc-for>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:var(--border-subtle)"></span><span style="font-size:18px">Become a Member</span><span style="flex:1;height:1px;background:var(--border-subtle)"></span></div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-top:10px">
+      <sc-for list="{{ bundles }}" as="o" hint-placeholder-count="3">
+        <button onClick="{{ o.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:22px 8px 14px;border-radius:10px;cursor:pointer;font-family:var(--font-sans);text-align:center;border:{{ o.border }};background:{{ o.bg }}">
+          <sc-if value="{{ o.tag }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--surface-brand);color:#fff;font:700 15px/20px var(--font-sans);padding:3px 12px;border-radius:6px">{{ o.tag }}</span></sc-if>
+          <img loading="lazy" src="{{ o.img }}" alt="" style="height:64px;object-fit:contain">
+          <span style="font-size:16px;line-height:20px;font-weight:500">{{ o.label }}<sc-if value="{{ o.free }}" hint-placeholder-val="{{ false }}"> + <span style="color:var(--text-brand);font-weight:600">FREE Shipping</span></sc-if></span>
+          <s style="font-size:14px;color:var(--text-muted)">$59.90</s>
+          <b style="font-size:clamp(17px,2cqw,20px)">{{ o.each }}/ea</b>
+          <span style="background:var(--zf-green-100);color:var(--text-brand);font:700 14px/18px var(--font-sans);letter-spacing:.04em;padding:3px 10px;border-radius:6px">{{ o.save }}</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ member }}" hint-placeholder-val="{{ true }}">
+    <div style="background:var(--surface-tint);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:8px">
+      <b style="text-align:center;color:var(--text-brand);font-size:17px">❦ Your order includes ❦</b>
+      <div style="display:flex;gap:10px;font-size:16px;line-height:22px"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>You're saving <b>{{ saving }}</b> on this order</span></div>
+      <div style="display:flex;gap:10px;font-size:16px;line-height:22px"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>{{ shipLine }}</span></div>
+      <div style="display:flex;gap:10px;font-size:16px;line-height:22px"><span style="flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--surface-brand);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px">✓</span><span>60-Day, No-Return-Required Guarantee</span></div>
+    </div>
+    </sc-if>
+    <sc-if value="{{ oneTime }}" hint-placeholder-val="{{ false }}">
+    <div style="border:1px solid var(--border-subtle);border-radius:10px;padding:16px 20px;font-size:16px;line-height:24px;text-align:center">One-time purchase: <b>$59.90 per bottle</b>. No membership, no refills.</div>
+    </sc-if>
+
+    <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Button" size="lg" full-width="{{ true }}" dc-props="{{ ctaProps }}" on-click="{{ addToCart }}" hint-size="100%,64px">{{ ctaLabel }}</x-import>
+    <sc-if value="{{ added }}" hint-placeholder-val="{{ false }}"><div style="text-align:center;font-weight:700;color:var(--text-brand)">✓ Added to cart</div></sc-if>
+    <sc-if value="{{ member }}" hint-placeholder-val="{{ true }}"><div style="text-align:center;font-size:15px">Your refill ships every month. Cancel anytime.</div></sc-if>
+    <button onClick="{{ toggleMode }}" style="align-self:center;background:none;border:none;font:500 16px var(--font-sans);text-decoration:underline;cursor:pointer;color:#000">{{ modeLink }}</button>
+
+    <div style="border:1.5px solid var(--border-brand);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:8px">
+      <b style="display:flex;align-items:center;gap:8px;color:var(--text-brand);font-size:18px"><span style="width:20px;height:20px;border-radius:50%;background:var(--surface-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1">+</span>Clinicians' Choice</b>
+      <span style="font-size:16px;line-height:23px"><b>524 clinicians</b> share this on FrontrowMD without compensation.</span>
+      <span style="display:flex;align-items:center;gap:10px;font-size:14px"><img loading="lazy" src="assets/clinicians-avatars.png" alt="" style="height:24px"><span style="text-decoration:underline">View clinicians &amp; learn more</span></span>
+    </div>
+    <sc-if value="{{ showFacebook }}" hint-placeholder-val="{{ true }}"><img loading="lazy" src="assets/facebook-comments-crop.jpg" alt="Facebook comments from Crystal Wold and Jen M. Greenway" style="width:100%;max-width:440px;align-self:center;display:block"></sc-if>
+
+    <sc-if value="{{ showDetails }}" hint-placeholder-val="{{ true }}">
+      <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Notice" title="Counterfeit Warning" hint-size="100%,110px">Zafira Recovery Foundation is only sold on this website. Any product listed on Amazon or eBay is counterfeit and not genuine Zafira Recovery Foundation.</x-import>
+      <sc-if value="{{ showJennifer }}" hint-placeholder-val="{{ true }}">
+      <div style="border:1.5px solid var(--zf-green-200);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:12px;align-items:flex-start"><img loading="lazy" src="assets/jennifer-waltz.png" alt="Jennifer Waltz" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0"><p style="margin:0;font-size:14px;line-height:21px;color:var(--zf-green-900)">I'm 52yo, started Ozempic last year, and it totally made me feel dead inside, like nothing mattered anymore. It was terrifying. I found discussions online about dopamine and GLP-1s and someone mentioned Recovery Foundation. I'm so happy I found it, it WORKS!!! got my FEELINGS back within the first 3 weeks. The saffron or whatever is in this brought me back. I'm still losing weight (down 32 lbs) but I'm also more present in my life again. My daughter said 'mommy's back' and that broke me.</p></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="display:flex;gap:8px;align-items:center"><span style="color:var(--zf-gold)">★★★★★</span>Jennifer Waltz, RN</span><span style="color:var(--text-brand);font-weight:600">✓ Verified Customer</span></div>
+      </div>
+      </sc-if>
+      <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.Accordion" items="{{ faq }}" default-open="{{ 0 }}" hint-size="100%,600px"></x-import>
+    </sc-if>
+    <p style="margin:0;font-size:12px;line-height:17px;color:var(--text-muted)">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+  </div>
+
+  <div style="border:1px solid var(--border-subtle);border-radius:16px;padding:22px 18px;display:flex;flex-direction:column;gap:16px;min-width:0">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;font-size:16px;text-align:center">
+      <b style="font-size:19px">Excellent</b>
+      <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.StarRating" rating="{{ 4.8 }}" size="{{ 22 }}" hint-size="120px,22px"></x-import>
+      <span>4.8 out of 5 based on <b>456 reviews</b> on</span>
+      <span style="font-weight:700"><span style="color:var(--zf-trustpilot)">★</span> Trustpilot</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px">
+      <div style="background:var(--zf-ink-100);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:10px;align-items:center"><span style="width:40px;height:40px;border-radius:50%;background:var(--surface-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">JT</span><span style="display:flex;flex-direction:column"><b>Jeanette Trask</b><span style="font-size:13px;color:var(--text-muted)">US · Aug 27, 2026</span></span></div>
+        <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.StarRating" rating="{{ 5 }}" size="{{ 16 }}" hint-size="90px,16px"></x-import>
+        <p style="margin:0;font-size:15px;line-height:23px">“I cannot believe the difference in the way I feel since taking Zafira after 2-3 weeks. The sleepiness is gone during the day and I actually feel like myself.”</p>
+        <span style="font-size:13px;color:var(--text-muted)">Trustpilot review</span>
+      </div>
+      <div style="background:var(--zf-ink-100);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:10px;align-items:center"><span style="width:40px;height:40px;border-radius:50%;background:var(--zf-green-200);display:flex;align-items:center;justify-content:center;font-weight:700">KN</span><span style="display:flex;flex-direction:column"><b>Kevin Noel</b><span style="font-size:13px;color:var(--text-muted)">US · Sep 3, 2026</span></span></div>
+        <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.StarRating" rating="{{ 5 }}" size="{{ 16 }}" hint-size="90px,16px"></x-import>
+        <p style="margin:0;font-size:15px;line-height:23px">“I could eliminate the magnesium, ginger, etc. that my wife was taking with ... one combined product that hit on some of the main side-effects. After my first month on GPL-1 and Zafira I had little to know side-effects! I'm sold!”</p>
+        <span style="font-size:13px;color:var(--text-muted)">Trustpilot review</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1400},&quot;compliant&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showDetails&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;onAdd&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;() =&gt; void&quot;}}">
+class Component extends DCLogic {
+  state = { img: 0, bundle: 3, oneTime: false, added: false };
+  renderVals() {
+    const h = React.createElement;
+    const compliant = !!this.props.compliant;
+    const { img, bundle, oneTime, added } = this.state;
+    const cdn = f => 'https://www.zafiraorganics.com/cdn/shop/files/' + f;
+    const gal = ['assets/pdp-main.png', 'assets/supplement-facts.jpg', 'assets/life/closeup-bottle.jpg', 'assets/life/kitchen-bottle.png', 'assets/life/capsule-outdoors.jpg', 'assets/life/stomach-bottle.jpg', 'assets/research-case-studies.png', 'assets/guarantee-60-day.jpg', 'assets/life/mirror-bathroom.jpg', 'assets/bottle-in-hand-grass.jpg'].map(f => ({ main: f, th: f }));
+    const go = i => this.setState({ img: (i + gal.length) % gal.length });
+    const svg = (paths) => h('svg', { viewBox: '0 0 24 24', width: 30, height: 30, fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round' }, paths.map((d, k) => h('path', { key: k, d })));
+    const I = {
+      bulb: svg(['M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5', 'M9 18h6', 'M10 22h4']),
+      flask: svg(['M10 2v7.5a2 2 0 0 1-.2.9L4.7 20.5a1 1 0 0 0 .9 1.5h12.8a1 1 0 0 0 .9-1.5l-5.1-10.1a2 2 0 0 1-.2-.9V2', 'M8.5 2h7', 'M7 16h10']),
+      smile: svg(['M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z', 'M8 14s1.5 2 4 2 4-2 4-2', 'M9 9h.01', 'M15 9h.01']),
+      shield: svg(['M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z', 'm9 12 2 2 4-4'])
+    };
+    const bl = compliant
+      ? ['Supports energy, mood, hair and digestion', 'Third-party tested, made in USA', 'Digestion support within days']
+      : ['Targets mental fog, hair loss and digestion', 'Clinically tested ingredients', 'Changes within days for mood', 'Safe to use with all medications'];
+    const benefits = bl.map(t => ({ t }));
+    const B = [
+      { q: 3, label: 'Buy 3', tag: 'Best Deal', free: true, each: '$26.46', save: 'SAVE 55%', day: '$0.88/day', img: 'assets/bundle-3.png', total: '$79.36', saving: '$100.34' },
+      { q: 2, label: 'Buy 2', tag: 'Most Popular', free: true, each: '$31.97', save: 'SAVE 46%', day: '$1.07/day', img: 'assets/bundle-2.png', total: '$63.92', saving: '$55.88' },
+      { q: 1, label: 'Buy 1', tag: null, free: false, each: '$39.92', save: 'SAVE 33%', day: '$1.33/day', img: 'assets/bundle-1.png', total: '$39.92', saving: '$19.98' }
+    ];
+    const sel = B.find(b => b.q === bundle);
+    const bundles = B.map(b => ({ ...b, pick: () => this.setState({ bundle: b.q, oneTime: false, added: false }), border: (!oneTime && b.q === bundle) ? '2px solid var(--border-brand)' : '1px solid var(--border-subtle)', bg: (!oneTime && b.q === bundle) ? 'var(--surface-tint)' : '#fff' }));
+    const ck = (items) => h('div', { style: { display: 'flex', flexDirection: 'column', gap: 4 } }, items.map((t, k) => h('div', { key: k, style: { display: 'flex', gap: 8 } }, h('span', { style: { color: 'var(--text-brand)', fontWeight: 800 } }, '✓'), h('span', null, t))));
+    const b = t => h('b', null, t);
+    const para = (...kids) => h('p', { style: { margin: '0 0 10px' } }, ...kids);
+    const faq = [
+      { title: 'How To Use For Best Results?', content: ck(['Each bottle contains 60 capsules', 'Take 2 capsules every day (after a meal for best absorption)', 'One bottle = 30-day supply when used as directed', 'Made in USA, 3rd party tested', '100% vegan, non-GMO, gluten-free']) },
+      { title: 'How Does This Help With My Mood & Energy Crashes?', content: h('div', null, para(b('For mood: '), 'Saffron helps your brain hold onto its "feel good" chemicals longer instead of burning through them too fast. L-Theanine calms the anxious, on-edge feeling without making you tired. They work together. One lifts, one steadies.'), para(b('For energy: '), "B12 helps your body turn food into actual energy. The form we use (Methylcobalamin) is ready to work immediately, your body doesn't have to convert it first. Magnesium relaxes the tight, tense muscles that quietly drain you all day. Less tension means less exhaustion")) },
+      compliant ? null : { title: 'Will This Stop My Weight Loss Or Bring Back The "Food Noise"?', content: h('div', null, para('Absolutely not. In fact, it often helps you lose weight faster.'), para('Zafira is designed to be a "Smart Shield." It restores the dopamine signals for ', b('mood and motivation'), ', but it does NOT interfere with the GLP-1 mechanisms that silence your hunger.'), ck([[b('Ginger Root: '), 'Proven to support healthy digestion and maintain a high metabolic rate (so you keep burning fat efficiently).'], [b('Magnesium: '), 'Helps relax tight muscles and supports recovery, so you can maintain lean muscle mass (which burns more calories than fat).'], [b('Saffron: '), 'clinically shown to reduce emotional snacking, giving you an extra layer of protection against the food noise.']]), para('Most importantly: It is very hard to lose weight when you are exhausted and stuck in bed. By getting your energy back, you move more, burn more, and lose more.')) },
+      { title: 'Will This Stop My Hair Loss?', content: compliant ? h('div', null, para('When you eat less, your body gets less of the nutrients hair is built from. That is why the formula contains:'), ck([[b('Zinc Citrate: '), 'hair follicles need zinc to grow.'], [b('B12 (Methylcobalamin): '), 'feeds the cells that build hair.'], [b('Vitamin D3 (2,000 IU): '), 'supports healthy follicles.']]), para('Reviewers report hair changes by month 2-3. Results vary.')) : h('div', null, para(b('Very Realistically Yes.')), para("When you lose weight rapidly, your body loses the very needed nutrients to retain and grow new hair. That's why our formula contains:"), ck([[b('Zinc Citrate: '), 'Your hair follicles need zinc to grow. When levels drop, follicles go dormant. This tops them back up.'], [b('B12 (Methylcobalamin): '), 'Feeds the cells that build hair. Low B12 = weak, thinning strands.'], [b('Vitamin D3 (2,000 IU): '), 'Wakes up sleeping follicles. Most people on GLP-1s are already deficient.']]), para('Many of our clients noticed less hair in the drain before they noticed anything else.')) },
+      { title: 'Does This Help With Nausea & Those Sulfur Burps?', content: compliant ? ck(['Ginger extract (100mg) supports digestive comfort.', 'Most reviewers notice digestion first, within days.']) : ck(['Ginger extract is clinically proven for nausea relief and reduces gas formation.', 'Most users report significant improvement within days.']) },
+      { title: 'Which Ingredients Do What Exactly?', content: ck([[b('Mood: '), 'Saffron, L-Theanine, Myo-Inositol'], [b('Energy: '), 'B12, Magnesium, Vitamin C'], [b('Hair: '), 'Zinc, Copper, Vitamin D3'], [b('Digestion: '), 'Ginger, Magnesium'], [b('Nausea: '), 'Ginger Extract'], [b('Overall Recovery: '), 'Full mineral and vitamin complex (Zinc, Copper, Magnesium, D3, B12, Vitamin C)']]) },
+      { title: compliant ? 'Can I Take This With My GLP-1?' : 'Is This Safe With GLP-1 Medications?', content: compliant ? para('Designed to be taken alongside GLP-1 therapy. Check with your prescriber, especially if you take antidepressants, blood-pressure, thyroid or diabetes medication.') : h('div', null, para('Yes, all ingredients are food-based nutrients safe with GLP-1 medications.'), para('If you are taking other medications alongside GLP-1, we recommend consulting your doctor.')) },
+      { title: 'How Long Until I See Difference?', content: compliant ? ck([[b('Days 1-7: '), 'Digestion starts to settle'], [b('Weeks 1-2: '), 'Energy starts to come back'], [b('Weeks 3-4: '), 'Mood feels steadier'], [b('Weeks 6-8: '), 'Hair support builds'], 'Results vary.']) : ck([[b('Days 1-7: '), 'Digestive improvement, less nausea'], [b('Week 2: '), 'Mood lifting, energy returning'], [b('Week 4: '), 'Hair shedding slows'], [b('Week 8: '), 'Feel like yourself again']]) },
+      { title: "What If It Doesn't Work For Me?", content: "60-day money back guarantee. If you don't feel significantly better, full refund, no questions asked." },
+      { title: 'Complete Ingredient List', content: h('div', null, para(b('Active Ingredients (Per 2 Capsules):')), ck(['Vitamin B12 - 50 mcg (as Methylcobalamin) - 2083% DV', 'Vitamin C - 50 mg (as Ascorbic Acid) - 56% DV', 'Vitamin D3 - 50 mcg / 2,000 IU (as Cholecalciferol) - 250% DV', 'Magnesium - 50 mg (Elemental) from Magnesium Glycinate - 12% DV', 'Zinc - 10 mg (Elemental) from Zinc Citrate - 91% DV', 'Copper - 0.5 mg (Elemental) from Copper Glycinate - 56% DV', 'Myo-Inositol - 600 mg †', 'L-Theanine - 200 mg †', 'Ginger Extract - 100 mg (Standardized to Gingerols) †', 'Saffron Extract - 30 mg (4:1 Extract) †']), para('† Daily Value not established'), para(b('Other Ingredients: '), 'Hypromellose (vegetable capsule), microcrystalline cellulose, silicon dioxide, magnesium stearate'), para(b('Allergen Information: '), 'Free from gluten, dairy, soy, and artificial colors or preservatives'), para(b('Serving Size: '), '2 capsules daily. ', b('Servings Per Container: '), '30 (60 capsules)')) },
+      { title: 'Shipping Information', content: h('div', null, para('All orders are fulfilled and then shipped out to anywhere in 1-2 working days on average. USA: 1-3 business days. Canada: 2-5 business days. Europe & UK, Australia, NZ & Oceania, Latin America and other countries: 4-12 business days. All orders come with tracking information once shipped.'), para(b('Returns: '), 'You may return it within 60 days of delivery for a full refund or exchange, no questions asked. Contact support@zafiraorganics.com')) }
+    ].filter(Boolean);
+    return {
+      mainImg: gal[img].main,
+      prev: () => go(img - 1), next: () => go(img + 1),
+      thumbs: gal.map((g, i) => ({ src: g.th, pick: () => go(i), w: i === img ? '22px' : '8px', c: i === img ? 'var(--surface-brand)' : 'var(--zf-ink-300)' })),
+      benefits, bundles,
+      member: !oneTime, oneTime,
+      saving: sel.saving,
+      shipLine: sel.free ? 'FREE shipping on this order' : 'Free shipping on 2+ bottles',
+      ctaLabel: oneTime ? 'Add to cart · $59.90' : 'Add to cart', ctaProps: { style: { borderRadius: 999, padding: '20px 32px' } }, showFacebook: !this.props.hideWeight,
+      modeLink: oneTime ? 'Switch back to member pricing' : 'One-time purchase without discount',
+      toggleMode: () => this.setState(s => ({ oneTime: !s.oneTime, added: false })),
+      addToCart: () => { this.setState({ added: true }); if (this.props.onAdd) this.props.onAdd(); },
+      added,
+      showDetails: this.props.showDetails ?? true,
+      showJennifer: !compliant,
+      faq
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+/* No font binaries were supplied. Inter is the site's live font (Google Fonts).
+   DM Serif Display = nearest substitute for the serif used on the bottle label + LP panels.
+   Poppins = used in the proof/claims panels (charts, "Real Science, Real Results"). */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600;700&display=swap");

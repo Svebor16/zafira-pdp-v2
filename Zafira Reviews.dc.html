@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/styles.css">
+<script src="_ds/zafira-design-system-3f024996-cead-4c81-96ef-b47f92ebe519/_ds_bundle.js"></script>
+</helmet>
+<div style="width:100%;font-family:var(--font-sans);color:#000">
+
+<sc-if value="{{ isTrustpilot }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+    <h2 style="margin:0;font:400 clamp(30px,4cqw,40px)/1.1 var(--font-heading);text-wrap:balance">What GLP-1 Users Say on Trustpilot</h2>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;font-size:17px">
+      <b style="font-size:20px">Excellent</b>
+      <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.StarRating" rating="{{ 4.8 }}" size="{{ 24 }}" hint-size="130px,24px"></x-import>
+      <span>4.8 out of 5 based on <b>456 reviews</b> on</span>
+      <span style="display:flex;align-items:center;gap:4px;font-weight:700"><span style="color:var(--zf-trustpilot);font-size:20px">★</span>Trustpilot</span>
+    </div>
+  </div>
+  <div style="columns:280px 4;column-gap:16px">
+    <sc-for list="{{ tpShown }}" as="r" hint-placeholder-count="4">
+      <div style="break-inside:avoid;margin-bottom:16px;background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <sc-if value="{{ r.photo }}" hint-placeholder-val="{{ false }}"><img loading="lazy" src="{{ r.photo }}" alt="" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0"></sc-if>
+          <sc-if value="{{ r.noPhoto }}" hint-placeholder-val="{{ true }}"><span style="width:44px;height:44px;border-radius:50%;background:{{ r.bg }};color:{{ r.fg }};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0">{{ r.initials }}</span></sc-if>
+          <div style="display:flex;flex-direction:column;flex:1;min-width:0"><b style="font-size:16px">{{ r.name }}</b><span style="font-size:16px;color:var(--text-muted)">{{ r.meta }}</span></div>
+        </div>
+        <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.StarRating" rating="{{ 5 }}" size="{{ 20 }}" hint-size="110px,20px"></x-import>
+        <sc-if value="{{ r.title }}" hint-placeholder-val="{{ true }}"><b style="font-size:16px;line-height:22px">{{ r.title }}</b></sc-if>
+        <p style="margin:0;font-size:18px;line-height:27px">{{ r.text }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <span style="background:var(--zf-ink-100);border-radius:6px;padding:3px 8px;font-size:14px">{{ r.exp }}</span>
+          <span style="background:var(--zf-ink-100);border-radius:6px;padding:3px 8px;font-size:14px">Trustpilot review</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <sc-if value="{{ more.tp }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggle.tp }}" style="align-self:center;background:#fff;border:1.5px solid var(--border-brand);color:var(--text-brand);border-radius:10px;padding:12px 22px;font:700 14px var(--font-sans);letter-spacing:.04em;cursor:pointer">{{ label.tp }}</button></sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ isJudgeme }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+    <h2 style="margin:0;font:400 clamp(30px,4cqw,40px)/1.1 var(--font-heading);text-wrap:balance">What GLP-1 Users Are Saying About Zafira</h2>
+    <div style="display:flex;align-items:center;gap:8px;font-size:16px"><span style="color:var(--zf-judgeme);font-size:22px;letter-spacing:2px">★★★★★</span><b>4.9/5 - 12,847+ Reviews</b></div>
+    <p style="margin:0;font-size:16px;line-height:24px;color:var(--zf-ink-700);max-width:620px">Every review below is from a verified buyer, shown word for word. The 4-star ones too.</p>
+  </div>
+  <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:6px">
+    <sc-for list="{{ photos }}" as="p" hint-placeholder-count="10">
+      <img loading="lazy" src="{{ p }}" alt="Customer photo" style="width:120px;height:120px;border-radius:10px;object-fit:cover;flex-shrink:0;border:1px solid var(--border-subtle)">
+    </sc-for>
+  </div>
+  <div style="columns:280px 3;column-gap:16px">
+    <sc-for list="{{ jmShown }}" as="r" hint-placeholder-count="5">
+      <div style="break-inside:avoid;margin-bottom:16px">
+        <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.ReviewCard" name="{{ r.name }}" date="{{ r.date }}" rating="{{ r.rating }}" text="{{ r.text }}" photo="{{ r.photo }}" hint-size="100%,200px"></x-import>
+      </div>
+    </sc-for>
+  </div>
+  <sc-if value="{{ more.jm }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggle.jm }}" style="align-self:center;background:#fff;border:1.5px solid var(--border-brand);color:var(--text-brand);border-radius:10px;padding:12px 22px;font:700 14px var(--font-sans);letter-spacing:.04em;cursor:pointer">{{ label.jm }}</button></sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ isVideos }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:20px">
+  <h2 style="margin:0;font:400 clamp(26px,3.4cqw,36px)/1.1 var(--font-heading);text-align:center;text-wrap:balance">Loved By Thousands Finding Their Way Back</h2>
+  <div style="display:flex;gap:14px;overflow-x:auto;padding-bottom:6px;justify-content:safe center">
+    <sc-for list="{{ videos }}" as="v" hint-placeholder-count="3">
+      <div style="flex:0 0 220px;display:flex;flex-direction:column;gap:10px">
+        <img loading="lazy" src="{{ v.img }}" alt="Video testimonial" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;display:block">
+        <p style="margin:0;font-size:16px;line-height:19px">“{{ v.a }}<b>{{ v.b }}</b>{{ v.c }}”</p>
+        <span style="font-size:14px;font-weight:600;color:var(--text-brand)">✓ Verified Customer</span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isSelfies }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:0 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:32px">
+  <h2 style="margin:0;font:400 clamp(30px,4cqw,40px)/1.1 var(--font-heading);text-align:center;text-wrap:balance">Why GLP-1 Users Trust Zafira Recovery</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:18px">
+    <sc-for list="{{ selfiesShown }}" as="s" hint-placeholder-count="4">
+      <x-import component-from-global-scope="ZafiraDesignSystem_3f0249.TestimonialCard" image="{{ s.img }}" quote="{{ s.q }}" name="{{ s.n }}" hint-size="100%,460px"></x-import>
+    </sc-for>
+  </div>
+  <sc-if value="{{ more.selfies }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggle.selfies }}" style="align-self:center;background:#fff;border:1.5px solid var(--border-brand);color:var(--text-brand);border-radius:10px;padding:12px 22px;font:700 14px var(--font-sans);letter-spacing:.04em;cursor:pointer">{{ label.selfies }}</button></sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ isFacebook }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:640px;margin:0 auto;padding:0 20px;box-sizing:border-box">
+  <img loading="lazy" src="assets/facebook-comments-1.png" alt="Facebook comments from Crystal Wold and Jen M. Greenway" style="width:100%;display:block;border-radius:16px">
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;section&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;trustpilot&quot;,&quot;judgeme&quot;,&quot;videos&quot;,&quot;selfies&quot;,&quot;facebook&quot;],&quot;default&quot;:&quot;trustpilot&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;compliant&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { open: {} };
+  renderVals() {
+    const section = this.props.section ?? 'trustpilot';
+    const hideWeight = !!this.props.hideWeight;
+    const keep = r => !(hideWeight && r.w);
+    const tp = [
+      { name: 'Jeanette Trask', initials: 'JT', bg: '#035C05', fg: '#fff', meta: 'US', exp: 'Aug 27, 2026', text: 'I cannot believe the difference in the way I feel since taking Zafira after 2-3 weeks. The sleepiness is gone during the day and I actually feel like myself.' },
+      { name: 'Kevin Noel', initials: 'KN', bg: '#C5DDB9', fg: '#000', meta: 'US', exp: 'Sep 3, 2026', text: "I could eliminate the magnesium, ginger, etc. that my wife was taking with ... one combined product that hit on some of the main side-effects. After my first month on GPL-1 and Zafira I had little to know side-effects! I'm sold!" },
+      { name: 'Elece Lockridge', initials: 'EL', bg: '#D8F5DC', fg: '#000', meta: 'US · 3 reviews', exp: 'March 1, 2026', title: 'This product made me feel human again', text: 'This product made me feel human again. I was SO exhausted, no energy, very little sleep, body pain, and feeling terrible all over, maybe due to ZepBound. I’m now sleeping, out of pain, far less exhaustion, and feeling pretty good all over. The only thing I can attribute it to is this product.' },
+      { name: 'CYNTHIA', initials: 'CY', bg: '#FFF3B0', fg: '#000', meta: 'US · 2 reviews', exp: 'March 2, 2026', title: 'When I read about others who were...', text: 'When I read about others who were having these symptoms on glp-1’s, I was so relieved. Zafira was the answer to my problem! It completely took away the "gray-blah feelings" I was experiencing on my glp-1 meds. My motivation is returning and my energy is back. Thank you so much for this wonderful supplement.' },
+      { name: 'Angie', initials: 'AN', bg: '#FFE0B2', fg: '#000', meta: 'US · 7 reviews', exp: 'June 28, 2026', title: 'I’ve only been taking Zafira a few...', text: 'I’ve only been taking Zafira a few weeks. What I’ve noticed is I don’t always feel like I need a nap after lunch anymore. I’ve also noticed that my fasting blood draw is so much better. Ex. 150 down to 102. I will be looking for more positive things to continue.' },
+      { name: 'Stacey Davis', photo: 'assets/tp-stacey-avatar.png', meta: 'US · 1 review', exp: 'February 1, 2026', title: 'I noticed a difference within two...', text: 'I noticed a difference within two weeks. My energy level increased and my mood improved.' },
+      { name: 'Mike T', initials: 'MT', bg: '#FFE0B2', fg: '#000', meta: 'US · 2 reviews', exp: 'July 13, 2026', w: true, title: 'I have been taking MJ for about a year...', text: "I have been taking MJ for about a year and a half. During that time, I have lost 110 pounds, and my blood sugar and A1C levels have returned to the normal range. Recently, I began experiencing intense hunger pains, and the nausea I used to have for two days after each MJ injection returned. My weight loss had also plateaued, and I was having trouble sleeping. After doing some research online, I came across Zafira and decided it was worth trying. I was skeptical and honestly didn't expect it to make much of a difference. I'm happy to say that after taking Zafira twice a day for 20 days, my hunger pains have completely disappeared. The nausea is gone, and my sleep has noticeably improved. I haven't started losing weight again yet, but even if I don't, I'm completely satisfied with the results. The relief from the hunger, nausea, and poor sleep has made a significant difference in how I feel." },
+      { name: 'Roxanne', initials: 'RO', bg: '#FFDDE6', fg: '#000', meta: 'US · 1 review', exp: 'February 25, 2026', title: 'I feel so much better', text: 'I feel so much better. I have felt so dead and now im feeling alive again. Thank you so much for this product.' }
+    ].filter(keep).map(r => ({ ...r, noPhoto: !r.photo, photo: r.photo || null, title: r.title || null }));
+    const P = f => 'assets/jm-' + f + '.png';
+    const jm = [
+      { name: 'Rhonda Decker', date: '09/12/2026', rating: 5, photo: P('rhonda-decker'), text: 'I started Zaphira Recivery Foundation the same time I started Tirzepatide (compounded with Glycine). I had wondered if I would have the GLP side effects and thankfully, did not. Then I missed a dose and found out I did have side effects…nausea, fatigue, and generally just didn’t feel well. I took my next Zaphira dose the next day and felt just fine again! So happy I didn’t have to feel bad (except the 1 day)! I truly believe it absolutely works as advertised! 😎' },
+      { name: 'Laurie Miller', date: '06/01/2026', rating: 5, photo: P('laurie-miller'), text: 'This stuff is amazing!! Before I started taking Zafira, I would spend the majority of my day sitting in my recliner playing games on my tablet. I had zero desire to do anything, even though I had a ton to do. On the third day of taking Zafira, I started having more energy and wanting to actually do things. I am not sure what it is, but there is something in this that my body and mind needed. I am so grateful that I took a chance on it.' },
+      { name: 'Lynette Poncin', date: '08/09/2026', rating: 5, photo: P('lynette-poncin'), text: "I'm not sure there is a radical difference but I'm starting to have more energy and do not take naps in the middle of the day. I've ordered two more bottles since I don't take any other types of vitamins." },
+      { name: 'Jan Dickson', date: '08/30/2026', rating: 5, photo: P('jan-dickson'), w: true, text: 'I have been on Zepbound since June 2024. My cardiologist wanted me to lose weight before my aortic valve replacement. After losing 73 pounds in a year, I had that surgery in July 2025. In the last 6-9 months while continuing on Zepbound I felt as though my zeal and joy for life had vanished. Also, I was so tired with zero energy and motivation to do anything. Did my research and discovered Zafira Recovery capsules. Since being on two a day for two weeks, I am experiencing a big change in energy, motivation and joy, and am excited to see how much more of these changes I will experience as a result of taking Zafira!' },
+      { name: 'Sally Munson', date: '08/05/2026', rating: 4, photo: P('sally-munson-4star'), text: 'Okay. Still experiencing some constipation. Only been taking it 3-4 days. I think so far, I like GLP-1 SOS better' },
+      { name: 'Lisa Fritts', date: '09/08/2026', rating: 5, photo: P('lisa-fritts'), text: 'This has actually helped my energy level so much…thank you for making something that actually works to fight the side effects of weight loss shots!!! :)' },
+      { name: 'Verified Buyer', date: '', rating: 5, photo: P('made-it-through-journey'), text: 'I could not have made it through my weight loss journey if I hadn’t tried Zafira. I was losing my appetite totally. Losing any feelings I had for anything. I was not a happy person. I was ready to quit my Gl-p. Then I saw the Zafira ad & I thought something has to save me! I ordered it just in time. I got my appetite back. My feelings back & my energy back. Thank you so much for your superior product & all the research that went into it.' },
+      { name: 'Randy Griffin', date: '06/02/2026', rating: 5, photo: P('randy-griffin'), w: true, text: "I read a lot of reviews before I started taking Zepbound, and decided to start taking Zafira Recovery Foundation Capsules BEFORE I started taking Zepbound. I think I started taking it 3 weeks in advance. I have been on Zepbound now for 4 months and have not had a single side effect. Granted, some people probably don't have side effects but it seems like everyone I talked to had at least one--and as much as I wanted to lose weight I also didn't want to feel sick, lose my hair, be depressed or chronically constipated or any of the other things users talked about. I'm probably not losing weight as fast as some but if you lose a pound or pound and a half a week that's 50-75 pounds a year which will put me at goal and I feel great!" },
+      { name: 'Barbara F', date: '06/29/2026', rating: 4, photo: P('barbara-f-4star'), w: true, text: 'I would need to stop and start again to be sure, but I feel like my mood is better and that I have less fatigue. One downside, the capsules are hard to swallow. I have also lost 1.5 lb in the past 2 weeks, after being stuck for a bit' },
+      { name: 'Valerie Harper', date: '09/05/2026', rating: 5, photo: P('valerie-harper'), w: true, text: 'Only on the first bottle but I feel like this has helped my mood. Initially, it did help the scale but I think not taking them daily as I should may have affected those results. I am planning to order more bottles and see how a few more months go.' },
+      { name: 'Verified Buyer', date: '', rating: 5, photo: P('sleep-better'), text: 'I sleep better with these!' },
+      { name: 'Lynn Schmidt', date: '07/22/2026', rating: 5, photo: P('lynn-schmidt'), w: true, text: 'I feel better been on GLP just over a year lost 80 right now I am stuck scale not moving' },
+      { name: 'Verified Buyer', date: '', rating: 5, photo: P('worked-like-a-charm'), text: 'Worked like a charm' },
+      { name: 'Verified Buyer', date: '', rating: 5, photo: P('weight-finally-moved'), w: true, text: 'My weight has finally moved, Been stalled on a GLP1 for over a year.' }
+    ].filter(keep);
+    const photos = jm.map(r => r.photo).concat(['assets/jm-selfie-glasses-mirror.png']);
+    const videos = [
+      { img: 'assets/video-1.png', a: "I was less social. Nothing gave me pleasure. Not even seeing grandkids or being with friends that I would go to happy hour with. And then someone mentioned Zafira... in 2 and a half weeks, I have noticed a change in me. I'm back to me. I'm going out. I'm full of energy. I'm happy again. ", b: 'If you have that dullness, this will change that.', c: '' },
+      { img: 'assets/video-2.png', a: '', b: 'Within the first week, probably about day four or five, all of a sudden I started feeling better.', c: ' I felt more positive. I had some energy and you know, I live in Vegas, so I was very gung-ho to do things again and my son was like, wow mom, total change.' },
+      { img: 'assets/video-3.png', a: 'I was very hesitant because I never believe anything. But doing the GLP, being down in the dumps, not feeling like myself. Let me tell you what, ', b: 'after a couple days, it really kicked in', c: ". I really think this stuff works good. I'm one bottle in and I've ordered more. So hopefully this helps somebody else too like it did me because we all need a kick once in a while." }
+    ];
+    const S = n => 'assets/selfie-site-' + n + '.png';
+    const selfies = [
+      { img: S(1), n: 'Rachel Morrison', q: "After 4 months on Wegovy, I felt like I was going through the motions of my life without actually being there. This is the first thing that's helped me feel present again" },
+      { img: S(2), n: 'Leeya Walzar', q: 'At 58, I thought the emptiness was just aging combined with Ozempic, but these nutrients specifically target what GLP-1s destroy in your brain.' },
+      { img: S(3), n: 'Lindsay Schmitz', q: 'Finally something that actually works for the weird emptiness.' },
+      { img: S(4), n: 'Barbara Williams', w: true, q: "The worst part about Wegovy wasn't the nausea, it was feeling disconnected from my own life. This supplement helped me reconnect without giving up the weight loss, reccommended" },
+      { img: S(5), n: 'Nicole Hogan', q: "I'm 49 and the identity thing is real - you lose weight but also lose yourself somehow. This helped me feel stable through the changes instead of just numb." },
+      { img: S(6), n: 'James Foster', q: "The adrenaline rushes and crawling skin feeling nearly made me check into the ER. This calmed my nervous system within a couple weeks. Still don't understand the science but it works." },
+      { img: S(7), n: 'Karen Hughes', w: true, q: "37 lbs down but lost myself in the process. This gave me back my personality. My friends actually said 'you're back!' Didn't realize how flat I'd become until I wasn't anymore." },
+      { img: S(8), n: 'Tom Bradley', w: true, q: 'Projectile vomiting, sulfur burps, hair loss, depression. Was about to quit Zepbound at month 4. Recovery Foundation fixed all of it. Down 52 lbs total and actually healthy now. Thank you.' }
+    ].filter(keep);
+    return {
+      isTrustpilot: section === 'trustpilot', isJudgeme: section === 'judgeme', isVideos: section === 'videos',
+      isSelfies: section === 'selfies', isFacebook: section === 'facebook' && !hideWeight,
+      tp, jm, photos, videos, selfies,
+      ...(() => { const o = this.state.open; const lim = this.props.limit; const N = lim ? { tp: lim, jm: lim, selfies: lim } : { tp: 4, jm: 5, selfies: 4 }; const L = { tp, jm, selfies }; const r = { more: {}, toggle: {}, label: {} }; for (const k in N) { r[k + 'Shown'] = o[k] ? L[k] : L[k].slice(0, N[k]); r.more[k] = L[k].length > N[k]; r.toggle[k] = () => this.setState(st => ({ open: { ...st.open, [k]: !st.open[k] } })); r.label[k] = o[k] ? 'SHOW FEWER' : (lim ? 'VIEW ALL STORIES' : 'SHOW ALL ' + L[k].length + (k === 'selfies' ? ' STORIES' : ' REVIEWS')); } return r; })()
+    };
+  }
+}
+</script>
+</body>
+</html>
