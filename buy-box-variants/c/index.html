@@ -68,6 +68,9 @@
 .zf-sold:hover .zf-fill,.zf-sold:active .zf-fill{filter:brightness(1.1) saturate(1.1)}
 .zf-sold:hover .zf-fill::after,.zf-sold:active .zf-fill::after{animation-duration:1.5s}
 @media (prefers-reduced-motion:reduce){.zf-fill,.zf-fill::after{animation:none!important}}
+
+/* Desktop: center the announcement bar content */
+@media (min-width:900px){.ZC-ann{justify-content:center !important;gap:28px !important}.ZC-ann>div:first-child{text-align:center}}
 </style>
 <style>
   .ZC-tile{padding:18px 18px;gap:12px}
