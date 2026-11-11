@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+  @font-face{font-family:'Jitter';src:url(assets/Jitter-Hero-Text.ttf) format('truetype');font-weight:400;font-display:swap}
+  .ZD{font-family:Inter,sans-serif;color:#0E2417;box-sizing:border-box;container-type:inline-size;background:#fff;padding:16px}
+  .ZD *{box-sizing:border-box}
+  .ZD-wrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
+  .ZD-col{display:flex;flex-direction:column;gap:12px;min-width:0}
+  .ZD-tiles{display:flex;flex-direction:column;gap:10px}
+  .ZD-banner{margin-bottom:10px}
+  .ZD-h1{margin:0;font:400 34px/1.02 Jitter,'DM Serif Display',serif;color:#035C05}
+  .ZD-ben{display:flex;align-items:center;gap:6px;font:400 13px/17px Inter,sans-serif}
+  .ZD-tile{position:relative;width:100%;text-align:left;cursor:pointer;border-radius:12px;padding:14px 14px;display:flex;flex-direction:column;gap:10px;color:#0E2417;border:2px solid #B8B8B8;font-family:Poppins,sans-serif}
+  .ZD-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;width:100%}
+  .ZD-heads{display:flex;align-items:center;gap:3px;flex-shrink:0}
+  .ZD-detail{flex-direction:column;gap:6px;border-top:1px solid #BDBDBD;padding-top:9px}
+  .ZD-tag{position:absolute;top:-10px;right:12px;background:#035C05;color:#fff;font:700 10px/14px Poppins,sans-serif;letter-spacing:.06em;padding:4px 9px;border-radius:6px}
+  .ZD-off{background:#D2ECCB;color:#035C05;font:700 11px/15px Poppins,sans-serif;padding:3px 9px;border-radius:999px}
+  .ZD-fl{font:400 13px/18px Inter,sans-serif;color:#0E2417}
+  .ZD-fl b{color:#035C05}
+  .ZD-cta{display:block;width:100%;background:#035C05;color:#fff;border:none;border-radius:999px;padding:16px 26px;font:400 17px/1.2 Poppins,sans-serif;cursor:pointer}
+  .ZD-cta:hover{background:#024A03}
+  .ZD-lbl{font:600 11px/16px Poppins,sans-serif;letter-spacing:.12em;color:#035C05;text-transform:uppercase}
+  .ZD-gifts{position:relative;margin-top:6px;border:1.5px solid #035C05;background:#F1FBEF;border-radius:12px;padding:20px 10px 12px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:4px;align-items:center;text-align:center;font-family:Poppins,sans-serif}
+  .ZD-gtag{position:absolute;top:-11px;left:12px;background:#fff;border:1.5px solid #0E2417;border-radius:6px;padding:2px 9px;font:400 11px/15px Poppins,sans-serif;letter-spacing:.1em;color:#0E2417}
+  .ZD-gitem{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px}
+  .ZD-gbody{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .ZD-sep{align-self:stretch;width:1px;background:#BDBDBD}
+  .ZD-lock{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:4px;font:500 12px/14px Poppins,sans-serif;color:#0E2417;background:rgba(255,255,255,.85);border-radius:8px;padding:4px 8px;white-space:nowrap}
+  .ZD-left{display:contents}
+  .ZD-gal{display:flex;flex-direction:column;gap:12px;order:1;min-width:0}
+  .ZD-right{order:2;min-width:0}
+  .ZD-vids{order:3;margin:28px 0 0;display:flex;flex-direction:column;gap:10px}
+  .ZD-vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .ZD-vid{position:relative;aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:#EEF5EA}
+  .ZD-vid img{width:100%;height:100%;object-fit:cover;display:block}
+  .ZD-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center}
+  @container (min-width:900px){
+    .ZD{padding:28px 32px}
+    .ZD-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px 48px}
+    .ZD-h1{font-size:44px}
+    .ZD-left{display:flex;flex-direction:column;gap:12px;min-width:0}
+    .ZD-gal{order:0}
+    .ZD-banner{margin-bottom:28px}
+    .ZD-tile{padding:18px 18px;gap:12px}
+    .ZD-tiles{gap:14px}
+    .ZD-vids{order:0;margin-top:28px}
+  }
+</style>
+</helmet>
+<div class="ZD"><div class="ZD-banner">
+    <div class="ZD-ann" style="background:#035C05;color:#fff;border-radius:12px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+      <div><div class="ZD-ann-t" style="font:700 15px/18px Poppins,sans-serif;letter-spacing:.02em">EARLY BLACK FRIDAY SALE</div><div class="ZD-ann-s" style="font:400 12px/16px Inter,sans-serif;opacity:.9">Shop now and save on every bundle</div></div>
+      <div style="display:flex;align-items:flex-start;gap:6px">
+        <div style="text-align:center"><b style="display:block;font:700 20px/22px Poppins,sans-serif">{{ cdH }}</b><span style="font:400 9px/12px Inter,sans-serif">Hrs</span></div><span style="font:700 18px/22px Poppins,sans-serif">:</span>
+        <div style="text-align:center"><b style="display:block;font:700 20px/22px Poppins,sans-serif">{{ cdM }}</b><span style="font:400 9px/12px Inter,sans-serif">Mins</span></div><span style="font:700 18px/22px Poppins,sans-serif">:</span>
+        <div style="text-align:center"><b style="display:block;font:700 20px/22px Poppins,sans-serif">{{ cdS }}</b><span style="font:400 9px/12px Inter,sans-serif">Secs</span></div>
+      </div>
+    </div>
+</div><div class="ZD-wrap"><div class="ZD-left"><div class="ZD-gal"><div style="position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1/1;background:#F1F5EE"><img src="assets/variant-d-main.png" alt="Zafira Recovery Foundation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:{{ show0 }}"><img src="assets/gallery-1.jpg" alt="Zafira Recovery Foundation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:{{ show1 }}"><img src="assets/gallery-2.jpg" alt="Zafira Recovery Foundation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:{{ show2 }}"><img src="assets/gallery-3.jpg" alt="Zafira Recovery Foundation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:{{ show3 }}"><img src="assets/gallery-7.jpg" alt="Zafira Recovery Foundation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:{{ show4 }}"><img src="assets/gallery-4.jpg" alt="Zafira Recovery Foundation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:{{ show5 }}"><img src="assets/gallery-5.jpg" alt="Zafira Recovery Foundation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:{{ show6 }}"><img src="assets/gallery-6.jpg" alt="Zafira Recovery Foundation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:{{ show7 }}"><button onClick="{{ prev }}" aria-label="Previous image" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:none;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12);font-size:16px;cursor:pointer">‹</button><button onClick="{{ next }}" aria-label="Next image" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:none;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12);font-size:16px;cursor:pointer">›</button></div><div style="display:flex;gap:6px;overflow-x:auto;padding:2px 0 4px"><button onClick="{{ pick0 }}" aria-label="Show image" style="flex:0 0 52px;width:52px;height:52px;padding:0;border:{{ bd0 }};border-radius:8px;overflow:hidden;cursor:pointer;background:#fff"><img src="assets/variant-d-main.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button><button onClick="{{ pick1 }}" aria-label="Show image" style="flex:0 0 52px;width:52px;height:52px;padding:0;border:{{ bd1 }};border-radius:8px;overflow:hidden;cursor:pointer;background:#fff"><img src="assets/gallery-1.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button><button onClick="{{ pick2 }}" aria-label="Show image" style="flex:0 0 52px;width:52px;height:52px;padding:0;border:{{ bd2 }};border-radius:8px;overflow:hidden;cursor:pointer;background:#fff"><img src="assets/gallery-2.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button><button onClick="{{ pick3 }}" aria-label="Show image" style="flex:0 0 52px;width:52px;height:52px;padding:0;border:{{ bd3 }};border-radius:8px;overflow:hidden;cursor:pointer;background:#fff"><img src="assets/gallery-3.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button><button onClick="{{ pick4 }}" aria-label="Show image" style="flex:0 0 52px;width:52px;height:52px;padding:0;border:{{ bd4 }};border-radius:8px;overflow:hidden;cursor:pointer;background:#fff"><img src="assets/gallery-7.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button><button onClick="{{ pick5 }}" aria-label="Show image" style="flex:0 0 52px;width:52px;height:52px;padding:0;border:{{ bd5 }};border-radius:8px;overflow:hidden;cursor:pointer;background:#fff"><img src="assets/gallery-4.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button><button onClick="{{ pick6 }}" aria-label="Show image" style="flex:0 0 52px;width:52px;height:52px;padding:0;border:{{ bd6 }};border-radius:8px;overflow:hidden;cursor:pointer;background:#fff"><img src="assets/gallery-5.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button><button onClick="{{ pick7 }}" aria-label="Show image" style="flex:0 0 52px;width:52px;height:52px;padding:0;border:{{ bd7 }};border-radius:8px;overflow:hidden;cursor:pointer;background:#fff"><img src="assets/gallery-6.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button></div></div>
+<div class="ZD-vids">
+  <div style="font:600 16px/22px Poppins,sans-serif;text-align:center">What our customers are saying</div>
+  <div class="ZD-vgrid">
+    <div class="ZD-vid"><img src="assets/customer-video-1.jpg" alt="Customer video 1"><span class="ZD-play"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M8 5v14l11-7z" fill="#035C05"/></svg></span></div>
+    <div class="ZD-vid"><img src="assets/customer-video-2.jpg" alt="Customer video 2"><span class="ZD-play"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M8 5v14l11-7z" fill="#035C05"/></svg></span></div>
+    <div class="ZD-vid"><img src="assets/customer-video-3.jpg" alt="Customer video 3"><span class="ZD-play"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M8 5v14l11-7z" fill="#035C05"/></svg></span></div>
+  </div>
+</div>
+</div><div class="ZD-col ZD-right">
+    <div style="display:flex;align-items:center;gap:8px;font:400 13px/18px Inter,sans-serif;white-space:nowrap"><span style="color:#F5A623;letter-spacing:1px">★★★★★</span><span>Rated <b>4.92</b>/5 based on <b>12,847+</b> Verified</span></div>
+    <h1 class="ZD-h1">Recovery Foundation</h1>
+    <p style="margin:0;font:400 15px/22px Inter,sans-serif">Carefully formulated to address the specific nutritional needs during <b>GLP-1 treatment</b>.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 10px">
+      <div class="ZD-ben"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#035C05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>Daily Energy</div>
+      <div class="ZD-ben"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#035C05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Calm &amp; Mood Balance</div>
+      <div class="ZD-ben"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#035C05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M8 3c-2 2-2 5 0 7s2 5 0 7M12 3c-2 2-2 5 0 7s2 5 0 7M16 3c-2 2-2 5 0 7s2 5 0 7"/></svg>Healthy Hair Support</div>
+      <div class="ZD-ben"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#035C05" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M7 4c-2 0-3 2-3 5 0 3 2 5 3 7 1 2 3 4 5 4s3-1 3-3V9c0-3-1-5-3-5-1 0-2 1-3 1S8 4 7 4z"/></svg>Gut &amp; Digestion Wellness</div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px;border:none;border-radius:12px;padding:10px 14px;background:linear-gradient(180deg,#FFFFFF 0%,#F3F8F1 100%);box-shadow:0 6px 16px rgba(14,36,23,.10),0 1px 3px rgba(14,36,23,.08),inset 0 1px 0 #FFFFFF">
+      <div style="flex:1;height:9px;border-radius:999px;background:#EDEDED;overflow:hidden;box-shadow:inset 0 1px 2px rgba(0,0,0,.08)"><div style="width:91%;height:100%;border-radius:999px;background:linear-gradient(180deg,#E55B4D 0%,#C0392B 55%,#A93226 100%);box-shadow:0 1px 3px rgba(192,57,43,.45),inset 0 1px 0 rgba(255,255,255,.45)"></div></div>
+      <span style="font:400 12px/16px Poppins,sans-serif;color:#C0392B;white-space:nowrap">91% Sold</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span style="font:500 24px/1 Poppins,sans-serif;color:#035C05">{{ topPrice }}</span>
+      <s style="font:500 15px/1 Inter,sans-serif;color:#C0392B">{{ topStrike }}</s>
+      <span style="flex-basis:100%;height:0"></span>
+      <span style="background:#035C05;color:#fff;font:400 11px/15px Poppins,sans-serif;letter-spacing:.05em;padding:5px 11px;border-radius:999px">{{ topSave }}</span>
+    </div>
+<div class="ZD-tiles"><button class="ZD-tile" onClick="{{ pr_p0 }}" style="background:{{ bg_p0 }};border:{{ bd_p0 }}"><span class="ZD-row"><span class="ZD-heads"><img src="assets/bundle-1.png" alt="" style="height:40px;width:auto;object-fit:contain"></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><b style="font:400 16px/20px Poppins,sans-serif">Buy 1</b><span style="font:400 13px/17px Inter,sans-serif;color:#4A4A4A">{{ sub_p0 }}</span></span><span style="display:flex;flex-direction:column;align-items:flex-end"><span class="ZD-off">{{ off_p0 }}</span><b style="font:400 17px/20px Poppins,sans-serif;color:#035C05;margin-top:4px">{{ price_p0 }}</b><s style="font:400 12px/15px Inter,sans-serif;color:#C0392B">{{ strike_p0 }}</s></span></span><span class="ZD-detail" style="display:{{ det_p0 }}"><span class="ZD-fl"><b>✓</b> {{ qty_p0 }}</span><span class="ZD-fl" style="display:{{ shipD0 }}">✓ Free shipping</span><span style="font:500 13px/17px Inter,sans-serif;color:#C0392B">{{ saveLine_p0 }}</span></span></button><button class="ZD-tile" onClick="{{ pr_p1 }}" style="background:{{ bg_p1 }};border:{{ bd_p1 }}"><span class="ZD-tag">MOST POPULAR</span><span class="ZD-row"><span class="ZD-heads"><img src="assets/bundle-2.png" alt="" style="height:40px;width:auto;object-fit:contain"></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><b style="font:400 16px/20px Poppins,sans-serif">Buy 2 + Get 2 Free</b><span style="font:400 13px/17px Inter,sans-serif;color:#4A4A4A">{{ sub_p1 }}</span></span><span style="display:flex;flex-direction:column;align-items:flex-end"><span class="ZD-off">{{ off_p1 }}</span><b style="font:400 17px/20px Poppins,sans-serif;color:#035C05;margin-top:4px">{{ price_p1 }}</b><s style="font:400 12px/15px Inter,sans-serif;color:#C0392B">{{ strike_p1 }}</s></span></span><span class="ZD-detail" style="display:{{ det_p1 }}"><span class="ZD-fl"><b>✓</b> {{ qty_p1 }}</span><span class="ZD-fl"><b>✓</b> Free shipping</span><span style="font:500 13px/17px Inter,sans-serif;color:#C0392B">{{ saveLine_p1 }}</span></span></button><button class="ZD-tile" onClick="{{ pr_p2 }}" style="background:{{ bg_p2 }};border:{{ bd_p2 }}"><span class="ZD-tag">BEST VALUE</span><span class="ZD-row"><span class="ZD-heads"><img src="assets/bundle-3.png" alt="" style="height:40px;width:auto;object-fit:contain"></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><b style="font:400 16px/20px Poppins,sans-serif">Buy 3 + Get 3 Free</b><span style="font:400 13px/17px Inter,sans-serif;color:#4A4A4A">{{ sub_p2 }}</span></span><span style="display:flex;flex-direction:column;align-items:flex-end"><span class="ZD-off">{{ off_p2 }}</span><b style="font:400 17px/20px Poppins,sans-serif;color:#035C05;margin-top:4px">{{ price_p2 }}</b><s style="font:400 12px/15px Inter,sans-serif;color:#C0392B">{{ strike_p2 }}</s></span></span><span class="ZD-detail" style="display:{{ det_p2 }}"><span class="ZD-fl"><b>✓</b> {{ qty_p2 }}</span><span class="ZD-fl"><b>✓</b> Free shipping</span><span style="font:500 13px/17px Inter,sans-serif;color:#C0392B">{{ saveLine_p2 }}</span></span></button></div>
+    <button class="ZD-cta" onClick="{{ addToCart }}">{{ ctaLabel }} &nbsp;→</button>
+    <button onClick="{{ toggleMode }}" style="align-self:center;background:none;border:none;padding:0;color:#035C05;font:500 13px/1.3 Poppins,sans-serif;text-decoration:underline;cursor:pointer">{{ modeLink }}</button>
+    <div style="display:{{ addedDisplay }};text-align:center;font:700 13px/18px Poppins,sans-serif;color:#035C05">✓ Added to cart</div>
+    <div style="text-align:center;font:400 12px/17px Inter,sans-serif;color:#4A4A4A">{{ billedLine }}</div><div style="display:{{ noteD }};text-align:center;font:500 12px/17px Inter,sans-serif;color:#C0392B">Free bottles on first order only. Next refill on subscription will not get free bottles.</div>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { img: 0, cell: [2, 0], added: false, left: 10560 };
+  renderVals() {
+    const { img, cell, added, left } = this.state;
+    if (!this.cdTimer) this.cdTimer = setInterval(() => { const l = this.state.left; if (l > 0) this.setState({ left: l - 1 }); }, 1000);
+    const pad = n => String(n).padStart(2, '0');
+    const cdH = pad(Math.floor(left / 3600)), cdM = pad(Math.floor((left % 3600) / 60)), cdS = pad(left % 60);
+    const gal = ['assets/variant-d-main.png', 'assets/gallery-1.jpg', 'assets/gallery-2.jpg', 'assets/gallery-3.jpg', 'assets/gallery-7.jpg', 'assets/gallery-4.jpg', 'assets/gallery-5.jpg', 'assets/gallery-6.jpg'];
+    const go = i => this.setState({ img: (i + gal.length) % gal.length });
+
+    const isMember = cell[1] === 0;
+    const col = isMember ? 0 : 1;
+    const cr = cell[0];
+    const per = [['$49.90', '$62.40'], ['$22.50', '$28.10'], ['$21.30', '$26.70']];
+    const tot = [['$49.90', '$62.40'], ['$89.90', '$112.40'], ['$127.90', '$159.90']];
+    // full value = bottles received x $59.90 (the free bottles count too)
+    const full = [['$59.90', ''], ['$239.60', '$239.60'], ['$359.40', '$359.40']];
+    const save = [['$10.00', ''], ['$149.70', '$127.20'], ['$231.50', '$199.50']];
+    const pill = [['SAVE $10.00', 'ONE-TIME'], ['SAVE $149.70', 'SAVE $127.20'], ['SAVE $231.50', 'SAVE $199.50']];
+    const qty = ['1x Recovery Foundation Bottle', '4x Recovery Foundation Bottles (2 paid + 2 FREE)', '6x Recovery Foundation Bottles (3 paid + 3 FREE)'];
+    const out = {};
+    [0, 1, 2].forEach(r => {
+      const on = cr === r;
+      out['pr_p' + r] = () => this.setState({ cell: [r, cell[1]], added: false });
+      out['bg_p' + r] = on ? '#D2ECCB' : '#F5FBF2';
+      out['bd_p' + r] = on ? '2px solid #035C05' : '2px solid #B8B8B8';
+      out['det_p' + r] = on ? 'flex' : 'none';
+      out['sub_p' + r] = per[r][col] + ' per bottle';
+      out['price_p' + r] = tot[r][col];
+      out['strike_p' + r] = full[r][col];
+      out['off_p' + r] = pill[r][col];
+      out['qty_p' + r] = qty[r];
+      out['saveLine_p' + r] = save[r][col] ? 'You are saving ' + save[r][col] : 'One-time price';
+    });
+    out.shipD0 = isMember ? 'block' : 'none';
+    out.noteD = isMember ? 'block' : 'none';
+    out.toggleMode = () => this.setState({ cell: [cr, isMember ? 1 : 0], added: false });
+    out.modeLink = isMember ? 'One time purchase instead' : 'Back to Membership';
+    out.billedLine = isMember ? 'Refills ship every 30 days · Stop or cancel anytime' : 'One-time purchase · no membership, no refills';
+    out.addedDisplay = added ? 'block' : 'none';
+    
+    const galOut = {};
+    gal.forEach((s, i) => {
+      galOut['show' + i] = i === img ? 'block' : 'none';
+      galOut['bd' + i] = i === img ? '2px solid #035C05' : '2px solid transparent';
+      galOut['pick' + i] = () => go(i);
+    });
+
+    const topPrice = tot[cr][col];
+    return {
+      ...out, ...galOut,
+      cdH, cdM, cdS,
+      topPrice,
+      topStrike: full[cr][col],
+      topSave: isMember ? 'EARLY BLACK FRIDAY · SAVE ' + save[cr][0] : 'ONE-TIME PURCHASE',
+      mainImg: gal[img],
+      prev: () => go(img - 1),
+      next: () => go(img + 1),
+      thumbs: gal.map((src, i) => ({ pick: () => go(i), src, bd: i === img ? '2px solid #035C05' : '2px solid transparent' })),
+      ctaLabel: (isMember ? 'Become a Member · ' : 'Add to cart · ') + topPrice,
+      addToCart: () => this.setState({ added: true }),
+    };
+
+  }
+}
+</script>
+</body>
+</html>
